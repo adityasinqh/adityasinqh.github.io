@@ -33,8 +33,8 @@
    "Quelque part dans vos bureaux, John recopie à 18 h les chiffres d’un PDF dans un tableur. Je conçois les automatisations qui le font à sa place : des outils qui ne se parlaient pas partagent enfin leurs données, et la bonne information arrive à la bonne personne. John retrouve ses soirées."
   ],
   [
-   "Open to AI automation roles in Paris or Thionville",
-   "Ouvert aux postes en automatisation IA à Paris ou Thionville"
+   "Open to AI automation roles in Paris or Luxembourg",
+   "Ouvert aux postes en automatisation IA à Paris ou Luxembourg"
   ],
   [
    "Get in touch",
@@ -43,10 +43,6 @@
   [
    "Fines Management System",
    "Système de gestion des amendes"
-  ],
-  [
-   "self-hosted on",
-   "auto-hébergé sur"
   ],
   [
    "Extract",
@@ -609,12 +605,12 @@
    "Les noms et logos de produits sont des marques de leurs propriétaires"
   ],
   [
-   "Aditya Kumar Singh, AI automation engineer in Thionville, France. Production workflows that connect LLMs, ERPs and data pipelines for finance and operations teams.",
-   "Aditya Kumar Singh, ingénieur en automatisation IA à Thionville. Des workflows en production qui relient LLM, ERP et pipelines de données pour les équipes finance et opérations."
+   "Aditya Kumar Singh, AI automation engineer in Luxembourg. Production workflows that connect LLMs, ERPs and data pipelines for finance and operations teams.",
+   "Aditya Kumar Singh, ingénieur en automatisation IA à Luxembourg. Des workflows en production qui relient LLM, ERP et pipelines de données pour les équipes finance et opérations."
   ],
   [
-   "AI automation engineer in Thionville, France. Production workflows that connect LLMs, ERPs and data pipelines for finance and operations teams.",
-   "Ingénieur en automatisation IA à Thionville. Des workflows en production qui relient LLM, ERP et pipelines de données pour les équipes finance et opérations."
+   "AI automation engineer in Luxembourg. Production workflows that connect LLMs, ERPs and data pipelines for finance and operations teams.",
+   "Ingénieur en automatisation IA à Luxembourg. Des workflows en production qui relient LLM, ERP et pipelines de données pour les équipes finance et opérations."
   ],
   [
    "Aditya Kumar Singh, AI automation engineer portfolio",
@@ -663,6 +659,182 @@
   [
    "Monitoring, BI and design tools",
    "Outils de monitoring, BI et design"
+  ],
+  [
+   "Selected projects",
+   "Projets choisis"
+  ],
+  [
+   "Projects, swipe or use the arrows",
+   "Projets, faites glisser ou utilisez les flèches"
+  ],
+  [
+   "Previous project",
+   "Projet précédent"
+  ],
+  [
+   "Next project",
+   "Projet suivant"
+  ],
+  [
+   "Pause the slideshow",
+   "Mettre le diaporama en pause"
+  ],
+  [
+   "Play the slideshow",
+   "Relancer le diaporama"
+  ],
+  [
+   "1 of 4",
+   "1 sur 4"
+  ],
+  [
+   "2 of 4",
+   "2 sur 4"
+  ],
+  [
+   "3 of 4",
+   "3 sur 4"
+  ],
+  [
+   "4 of 4",
+   "4 sur 4"
+  ],
+  [
+   "Press Inbox Assistant at Dott: Gmail triggers on a new press email, Gemini drops collaboration pitches, drafts a localized reply from the Q&amp;A documents, and a person reviews it before sending. Response time went from 1 week to 1 day.",
+   "Assistant de la boîte presse chez Dott : Gmail déclenche le flux à chaque nouvel e-mail presse, Gemini écarte les demandes de collaboration, rédige une réponse localisée à partir des documents de Q&amp;R, et une personne la relit avant l’envoi. Délai de réponse passé d’une semaine à un jour."
+  ],
+  [
+   "Press Inbox Assistant",
+   "Assistant boîte presse"
+  ],
+  [
+   "Dott, communications",
+   "Dott, communication"
+  ],
+  [
+   "Catch",
+   "Capter"
+  ],
+  [
+   "new press email, first in thread",
+   "nouvel e-mail presse, premier du fil"
+  ],
+  [
+   "Filter",
+   "Filtrer"
+  ],
+  [
+   "collaboration pitches dropped",
+   "demandes de collaboration écartées"
+  ],
+  [
+   "Draft",
+   "Rédiger"
+  ],
+  [
+   "localized reply from the Q&amp;A docs",
+   "réponse localisée depuis les Q&amp;R"
+  ],
+  [
+   "Review",
+   "Relire"
+  ],
+  [
+   "a person sends it",
+   "une personne l’envoie"
+  ],
+  [
+   "1 week → 1 day",
+   "1 semaine → 1 jour"
+  ],
+  [
+   "Campaign Copywriter at Dott: a Gemini agent in n8n writes push, in-app and email campaigns in 14 languages, and a person approves every message before it goes out.",
+   "Rédacteur de campagnes chez Dott : un agent Gemini dans n8n rédige les campagnes push, in-app et e-mail en 14 langues, et une personne valide chaque message avant l’envoi."
+  ],
+  [
+   "Campaign Copywriter",
+   "Rédacteur de campagnes"
+  ],
+  [
+   "Dott, CRM/marketing",
+   "Dott, CRM/marketing"
+  ],
+  [
+   "Brief",
+   "Brief"
+  ],
+  [
+   "one campaign request",
+   "une demande de campagne"
+  ],
+  [
+   "Write",
+   "Écrire"
+  ],
+  [
+   "Gemini drafts every market",
+   "Gemini rédige pour chaque marché"
+  ],
+  [
+   "a person signs off each message",
+   "une personne valide chaque message"
+  ],
+  [
+   "Ship",
+   "Diffuser"
+  ],
+  [
+   "push, in-app and email",
+   "push, in-app et e-mail"
+  ],
+  [
+   "14 languages",
+   "14 langues"
+  ],
+  [
+   "Inventory reconciliation at Mahindra Logistics: SAP inventory data reconciled in SQL across 10,000+ transactions, with supplier performance dashboards in Power BI. Inventory errors fell 20%.",
+   "Rapprochement des stocks chez Mahindra Logistics : données de stock SAP rapprochées en SQL sur plus de 10 000 transactions, avec des tableaux de bord fournisseurs dans Power BI. Erreurs de stock en baisse de 20 %."
+  ],
+  [
+   "Inventory Reconciliation",
+   "Rapprochement des stocks"
+  ],
+  [
+   "inventory movements from SAP",
+   "mouvements de stock depuis SAP"
+  ],
+  [
+   "Reconcile",
+   "Rapprocher"
+  ],
+  [
+   "10,000+ transactions matched in SQL",
+   "10 000+ transactions rapprochées en SQL"
+  ],
+  [
+   "Report",
+   "Restituer"
+  ],
+  [
+   "supplier performance dashboards",
+   "tableaux de bord fournisseurs"
+  ],
+  [
+   "on-time delivery up to 98%",
+   "livraisons à l’heure portées à 98 %"
+  ],
+  [
+   "−20% inventory errors",
+   "−20 % d’erreurs de stock"
+  ],
+  [
+   "Dott, finance",
+   "Dott, finance"
+  ],
+  [
+   "Mahindra Logistics, operations",
+   "Mahindra Logistics, opérations"
   ]
  ],
  "raw": [

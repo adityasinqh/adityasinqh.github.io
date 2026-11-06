@@ -1,0 +1,702 @@
+{
+ "text": [
+  [
+   "Aditya Kumar Singh | AI Automation Engineer",
+   "Aditya Kumar Singh | Ingénieur en automatisation IA"
+  ],
+  [
+   "Skip to content",
+   "Aller au contenu"
+  ],
+  [
+   "Work",
+   "Projets"
+  ],
+  [
+   "Skills",
+   "Compétences"
+  ],
+  [
+   "Experience",
+   "Expérience"
+  ],
+  [
+   "Download CV",
+   "Télécharger le CV"
+  ],
+  [
+   "I build AI automations that connect LLMs, ERPs and data pipelines for finance and operations teams.",
+   "Je conçois des automatisations IA qui relient LLM, ERP et pipelines de données pour les équipes finance et opérations."
+  ],
+  [
+   "Somewhere in your office, there’s a John copying numbers from a PDF into a spreadsheet at 6pm. As an AI automation engineer, this pains me. So to save John a couple of hours every day, I get tools that never talked to each other chatting, teach them what to do, and make sure the right update lands with the right person. Less busywork, fewer mistakes, more time for work that actually needs John.",
+   "Quelque part dans vos bureaux, un certain John recopie à 18 h les chiffres d’un PDF dans un tableur. En tant qu’ingénieur en automatisation IA, ça me fait mal au cœur. Alors, pour faire gagner à John quelques heures chaque jour, je fais dialoguer des outils qui ne s’étaient jamais parlé, je leur apprends quoi faire et je m’assure que la bonne information arrive à la bonne personne. Moins de tâches répétitives, moins d’erreurs, plus de temps pour le travail qui a vraiment besoin de John."
+  ],
+  [
+   "Open to AI automation roles in Paris or Thionville",
+   "Ouvert aux postes en automatisation IA à Paris ou Thionville"
+  ],
+  [
+   "Get in touch",
+   "Me contacter"
+  ],
+  [
+   "Fines pipeline",
+   "Pipeline des amendes"
+  ],
+  [
+   "self-hosted on",
+   "auto-hébergé sur"
+  ],
+  [
+   "Extract",
+   "Extraire"
+  ],
+  [
+   "Gemini, per-country prompt",
+   "Gemini, prompt par pays"
+  ],
+  [
+   "Validate",
+   "Valider"
+  ],
+  [
+   "plate vs fleet, duplicate reference check",
+   "plaque vs flotte, contrôle des doublons"
+  ],
+  [
+   "Approve",
+   "Approuver"
+  ],
+  [
+   "weekly summary per vendor",
+   "synthèse hebdo par fournisseur"
+  ],
+  [
+   "Post",
+   "Comptabiliser"
+  ],
+  [
+   "one vendorBill per fine",
+   "une vendorBill par amende"
+  ],
+  [
+   "NetSuite REST API",
+   "API REST NetSuite"
+  ],
+  [
+   "Built and Shipped",
+   "Conçu et livré"
+  ],
+  [
+   "Two production builds at Dott: an LLM-to-ERP pipeline for the Finance team, and an AI assistant that triages a press inbox. Each card shows its results; open it for the architecture.",
+   "Deux projets en production chez Dott : un pipeline LLM vers ERP pour l’équipe Finance, et un assistant IA qui trie une boîte mail presse. Chaque carte présente ses résultats ; ouvrez-la pour voir l’architecture."
+  ],
+  [
+   "Dott, AI Automation Specialist",
+   "Dott, spécialiste en automatisation IA"
+  ],
+  [
+   "Cleared a 30,000+ fine backlog with a Gemini-to-NetSuite pipeline",
+   "Un arriéré de plus de 30 000 amendes résorbé grâce à un pipeline Gemini vers NetSuite"
+  ],
+  [
+   "City fines arrived as PDFs in different formats and languages, and Finance created each NetSuite bill by hand. I mapped the manual process with stakeholders, then built the pipeline that reads, checks and posts them.",
+   "Les amendes arrivaient en PDF, dans des formats et des langues différents, et la Finance saisissait chaque facture NetSuite à la main. J’ai cartographié le processus manuel avec les parties prenantes, puis construit le pipeline qui les lit, les vérifie et les comptabilise."
+  ],
+  [
+   "extraction accuracy with Gemini",
+   "de précision d’extraction avec Gemini"
+  ],
+  [
+   "8 h/week",
+   "8 h/sem."
+  ],
+  [
+   "saved for the finance team",
+   "gagnées pour l’équipe finance"
+  ],
+  [
+   "late-payment penalties, 2025 to 2026",
+   "de pénalités de retard, de 2025 à 2026"
+  ],
+  [
+   "Results",
+   "Résultats"
+  ],
+  [
+   "Tools",
+   "Outils"
+  ],
+  [
+   "See the architecture",
+   "Voir l’architecture"
+  ],
+  [
+   ": traffic fine pipeline",
+   " : pipeline des amendes"
+  ],
+  [
+   "Cut press-inbox response time from 1 week to 1 day with GenAI triage",
+   "Délai de réponse presse ramené d’une semaine à un jour grâce au tri par IA générative"
+  ],
+  [
+   "The press inbox was flooded with collaboration requests. I built a GenAI assistant that ignores the noise and drafts accurate, localized replies to real press inquiries for the team to review.",
+   "La boîte mail presse était inondée de demandes de collaboration. J’ai conçu un assistant d’IA générative qui ignore le bruit et rédige des réponses précises et localisées aux vraies demandes de presse, que l’équipe relit."
+  ],
+  [
+   "Prompt engineering",
+   "Ingénierie de prompts"
+  ],
+  [
+   ": PR inbox triage",
+   " : tri de la boîte presse"
+  ],
+  [
+   "Traffic fine pipeline",
+   "Pipeline des amendes routières"
+  ],
+  [
+   "Scheduled n8n stages, a validation loop for edge cases, and signed REST calls into NetSuite. People approve payments and fix exceptions; the pipeline does the rest.",
+   "Des étapes n8n planifiées, une boucle de validation pour les cas particuliers et des appels REST signés vers NetSuite. Les équipes approuvent les paiements et corrigent les exceptions ; le pipeline fait le reste."
+  ],
+  [
+   "Scheduled n8n workflows, self-hosted on Docker",
+   "Workflows n8n planifiés, auto-hébergés sur Docker"
+  ],
+  [
+   "1  Extract",
+   "1  Extraire"
+  ],
+  [
+   "Drive search per country",
+   "recherche Drive par pays"
+  ],
+  [
+   "JSON parsed and cleaned",
+   "JSON analysé et nettoyé"
+  ],
+  [
+   "dates, amounts normalised",
+   "dates, montants normalisés"
+  ],
+  [
+   "2  Validate",
+   "2  Valider"
+  ],
+  [
+   "PostgreSQL + APIs",
+   "PostgreSQL + API"
+  ],
+  [
+   "city and country lookup",
+   "recherche ville et pays"
+  ],
+  [
+   "Maps geocoding fallback",
+   "géocodage Maps en secours"
+  ],
+  [
+   "issuing authority to vendor",
+   "autorité → fournisseur"
+  ],
+  [
+   "currency, infraction type",
+   "devise, type d’infraction"
+  ],
+  [
+   "plate vs fleet (BigQuery)",
+   "plaque vs flotte (BigQuery)"
+  ],
+  [
+   "duplicate reference check",
+   "contrôle des doublons"
+  ],
+  [
+   "3  Approve",
+   "3  Approuver"
+  ],
+  [
+   "XLS pack from template",
+   "pack XLS depuis un modèle"
+  ],
+  [
+   "approval request by email",
+   "demande d’accord par e-mail"
+  ],
+  [
+   "replies polled from Gmail",
+   "réponses relevées dans Gmail"
+  ],
+  [
+   "Slack reminder after 7 days",
+   "relance Slack après 7 jours"
+  ],
+  [
+   "4  Post",
+   "4  Comptabiliser"
+  ],
+  [
+   "SuiteQL lookup of IDs",
+   "IDs via SuiteQL"
+  ],
+  [
+   "custom OAuth 1.0 TBA signer",
+   "signeur OAuth 1.0 TBA maison"
+  ],
+  [
+   "HMAC-SHA256 signatures",
+   "signatures HMAC-SHA256"
+  ],
+  [
+   "status written back",
+   "statut renvoyé"
+  ],
+  [
+   "Slack alert on failure",
+   "alerte Slack en cas d’échec"
+  ],
+  [
+   "fails",
+   "échec"
+  ],
+  [
+   "fixed",
+   "corrigé"
+  ],
+  [
+   "Edge cases",
+   "Cas particuliers"
+  ],
+  [
+   "edge_cases table + review sheet, ops fix, re-validated",
+   "table edge_cases + feuille de revue, corrigé, revalidé"
+  ],
+  [
+   "PostgreSQL is the source of truth, mirrored to BigQuery; files filed by country/city/year/month.",
+   "PostgreSQL fait foi, répliqué dans BigQuery ; fichiers classés par pays/ville/année/mois."
+  ],
+  [
+   "Problem",
+   "Problème"
+  ],
+  [
+   "Each country, often each city, has its own layout, language and payment reference. Manual keying fell behind, and late payments drew penalties.",
+   "Chaque pays, souvent chaque ville, a sa propre mise en page, sa langue et sa référence de paiement. La saisie manuelle ne suivait plus, et les retards de paiement entraînaient des pénalités."
+  ],
+  [
+   "Approach",
+   "Approche"
+  ],
+  [
+   "Country-specific prompts extract each fine; PostgreSQL and BigQuery validate and deduplicate it. After approval it posts as its own vendor bill, so every payment reference reconciles.",
+   "Des prompts propres à chaque pays extraient chaque amende ; PostgreSQL et BigQuery la valident et la dédoublonnent. Une fois approuvée, elle devient sa propre facture fournisseur, et chaque référence de paiement se rapproche."
+  ],
+  [
+   "n8n on Docker, Gemini, PostgreSQL mirrored to BigQuery. I wrote a custom OAuth 1.0 TBA (HMAC-SHA256) signer for NetSuite's REST API, which n8n's built-in credential could not handle.",
+   "n8n sur Docker, Gemini, PostgreSQL répliqué dans BigQuery. J’ai écrit un signeur OAuth 1.0 TBA (HMAC-SHA256) sur mesure pour l’API REST de NetSuite, que l’identifiant intégré de n8n ne gérait pas."
+  ],
+  [
+   "Result",
+   "Résultat"
+  ],
+  [
+   "No more manual bills: Finance reviews exceptions instead of typing invoices. Launched in Germany, then rolled out to Finland and Norway.",
+   "Fini les factures manuelles : la Finance traite les exceptions au lieu de saisir des factures. Lancé en Allemagne, puis déployé en Finlande et en Norvège."
+  ],
+  [
+   "My role",
+   "Mon rôle"
+  ],
+  [
+   "End to end: requirements with Finance and local operations, the pipeline design, the ERP integration and each country's rollout.",
+   "De bout en bout : recueil des besoins avec la Finance et les opérations locales, conception du pipeline, intégration ERP et déploiement dans chaque pays."
+  ],
+  [
+   "PR inbox triage",
+   "Tri de la boîte presse"
+  ],
+  [
+   "The agent drafts in the sender's language; a person always reviews before anything is sent.",
+   "L’agent rédige dans la langue de l’expéditeur ; une personne relit toujours avant tout envoi."
+  ],
+  [
+   "A new press email triggers the workflow. Only the first message in a thread continues. A Gemini agent reads the subject and body, using Dott and TIER Q&amp;A documents as knowledge. Collaboration requests return empty output and are ignored. Valid inquiries get a localized HTML draft under 150 words, saved as a Gmail draft in the thread for human review.",
+   "Un nouvel e-mail presse déclenche le workflow. Seul le premier message d’un fil continue. Un agent Gemini lit l’objet et le corps, en s’appuyant sur les documents de questions-réponses de Dott et TIER. Les demandes de collaboration renvoient une sortie vide et sont ignorées. Les vraies demandes reçoivent une réponse HTML localisée de moins de 150 mots, enregistrée comme brouillon Gmail dans le fil pour relecture humaine."
+  ],
+  [
+   "Q&amp;A knowledge",
+   "Base Q&amp;R"
+  ],
+  [
+   "Dott + TIER docs",
+   "docs Dott + TIER"
+  ],
+  [
+   "New press email",
+   "E-mail presse"
+  ],
+  [
+   "Gmail trigger",
+   "déclencheur Gmail"
+  ],
+  [
+   "First in thread?",
+   "Premier du fil ?"
+  ],
+  [
+   "follow-ups skipped",
+   "relances ignorées"
+  ],
+  [
+   "Gemini agent",
+   "Agent Gemini"
+  ],
+  [
+   "reads subject + body",
+   "lit objet + corps"
+  ],
+  [
+   "Localized reply",
+   "Réponse localisée"
+  ],
+  [
+   "HTML, under 150 words",
+   "HTML, moins de 150 mots"
+  ],
+  [
+   "Gmail draft",
+   "Brouillon Gmail"
+  ],
+  [
+   "in thread, for review",
+   "dans le fil, à relire"
+  ],
+  [
+   "collaboration request",
+   "demande de collaboration"
+  ],
+  [
+   "Empty output",
+   "Sortie vide"
+  ],
+  [
+   "ignored, no draft",
+   "ignorée, sans brouillon"
+  ],
+  [
+   "Real press inquiries were buried under collaboration pitches, and every answer had to match the official position. Replies took a week.",
+   "Les vraies demandes de presse étaient noyées sous les propositions de collaboration, et chaque réponse devait respecter la position officielle. Répondre prenait une semaine."
+  ],
+  [
+   "A Gemini agent reads the first message of each thread. Collaboration requests get no reply; real inquiries get an answer from the Dott and TIER Q&amp;A documents, saved as a Gmail draft in the thread.",
+   "Un agent Gemini lit le premier message de chaque fil. Les demandes de collaboration restent sans réponse ; les vraies demandes reçoivent une réponse tirée des documents de questions-réponses de Dott et TIER, enregistrée comme brouillon Gmail dans le fil."
+  ],
+  [
+   "n8n, Gmail for the trigger and drafts, Gemini, and Google Docs as the knowledge source.",
+   "n8n, Gmail pour le déclencheur et les brouillons, Gemini, et Google Docs comme base de connaissances."
+  ],
+  [
+   "Every real inquiry has a short, localized draft waiting in its thread; follow-ups and spam are skipped.",
+   "Chaque vraie demande trouve un brouillon court et localisé dans son fil ; les relances et le spam sont ignorés."
+  ],
+  [
+   "End to end: the integrations, the classification prompt and the filtering logic.",
+   "De bout en bout : les intégrations, le prompt de classification et la logique de filtrage."
+  ],
+  [
+   "Enablement",
+   "Montée en compétences"
+  ],
+  [
+   "Training and a company-wide hackathon have put 45 colleague-built workflows into production, saving 850+ hours a year. Alongside my own pipelines, I taught colleagues with no technical background to automate their own processes.",
+   "Des formations et un hackathon à l’échelle de l’entreprise ont mis en production 45 workflows créés par des collègues, soit plus de 850 heures gagnées par an. En parallèle de mes propres pipelines, j’ai appris à des collègues sans bagage technique à automatiser leurs propres processus."
+  ],
+  [
+   "employees trained",
+   "salariés formés"
+  ],
+  [
+   "Training with a self-written handbook",
+   "Des formations avec un guide que j’ai rédigé"
+  ],
+  [
+   "I wrote an automation handbook for non-technical colleagues and trained teams with it. They learned to map a manual process and build the workflow themselves.",
+   "J’ai rédigé un guide d’automatisation pour les collègues non techniques et formé des équipes avec. Ils ont appris à cartographier un processus manuel et à construire eux-mêmes le workflow."
+  ],
+  [
+   "Company-wide automation hackathon",
+   "Un hackathon d’automatisation à l’échelle de l’entreprise"
+  ],
+  [
+   "I led the event for 13 teams. Each team picked a process from its own work and built an automation for it.",
+   "J’ai animé l’événement pour 13 équipes. Chaque équipe a choisi un processus de son propre travail et l’a automatisé."
+  ],
+  [
+   "Automation &amp; Orchestration",
+   "Automatisation &amp; orchestration"
+  ],
+  [
+   "n8n (self-hosted, Code nodes)",
+   "n8n (auto-hébergé, nœuds Code)"
+  ],
+  [
+   "AI &amp; LLM",
+   "IA &amp; LLM"
+  ],
+  [
+   "LLM APIs",
+   "API de LLM"
+  ],
+  [
+   "Data &amp; Code",
+   "Données &amp; code"
+  ],
+  [
+   "Integration &amp; ERP",
+   "Intégration &amp; ERP"
+  ],
+  [
+   "REST APIs",
+   "API REST"
+  ],
+  [
+   "Monitoring, BI &amp; Design",
+   "Monitoring, BI &amp; design"
+  ],
+  [
+   "Where I have worked, 2021 to 2026.",
+   "Mes postes, de 2021 à 2026."
+  ],
+  [
+   "AI Automation Specialist",
+   "Spécialiste en automatisation IA"
+  ],
+  [
+   "· micromobility",
+   "· micromobilité"
+  ],
+  [
+   "Oct 2025 – Oct 2026 · Paris, France",
+   "oct. 2025 – oct. 2026 · Paris, France"
+  ],
+  [
+   "Scoped, built and maintained production automations for Finance, operations and communications teams, from requirements with stakeholders to deployment.",
+   "Cadrage, développement et maintenance d’automatisations en production pour les équipes Finance, opérations et communication, du recueil des besoins jusqu’au déploiement."
+  ],
+  [
+   "Built GenAI agents in n8n, including a Gemini copywriter for push, in-app and email campaigns in 14 languages with a human approval loop.",
+   "Création d’agents d’IA générative dans n8n, dont un rédacteur Gemini pour des campagnes push, in-app et e-mail en 14 langues, avec une boucle de validation humaine."
+  ],
+  [
+   "Builds and results: see",
+   "Réalisations et résultats : voir"
+  ],
+  [
+   "and",
+   "et"
+  ],
+  [
+   "BI Consultant (Freelance)",
+   "Consultant BI (freelance)"
+  ],
+  [
+   "· freelance marketplace",
+   "· plateforme de freelances"
+  ],
+  [
+   "Oct 2022 – Oct 2023 · Mumbai, India",
+   "oct. 2022 – oct. 2023 · Mumbai, Inde"
+  ],
+  [
+   "Delivered 100 projects for 35 clients across APAC with a 5.0/5.0 rating across 100+ reviews, scoping each with a project charter, measurable KPIs and agreed success criteria.",
+   "100 projets livrés pour 35 clients en Asie-Pacifique, avec une note de 5,0/5,0 sur plus de 100 avis ; chaque projet cadré par une charte, des KPI mesurables et des critères de réussite validés."
+  ],
+  [
+   "Built automated reporting in Power BI and Microsoft Fabric (ETL, lakehouse/DWH, DAX time intelligence) with decision-focused dashboards, cutting manual reporting by 5–10 hours per client per week.",
+   "Reporting automatisé dans Power BI et Microsoft Fabric (ETL, lakehouse/DWH, time intelligence en DAX) avec des tableaux de bord orientés décision, réduisant le reporting manuel de 5 à 10 heures par client et par semaine."
+  ],
+  [
+   "hectorponce10, Fiverr client, United States · 5 stars",
+   "hectorponce10, client Fiverr, États-Unis · 5 étoiles"
+  ],
+  [
+   "Operations Analyst",
+   "Analyste opérations"
+  ],
+  [
+   "· logistics",
+   "· logistique"
+  ],
+  [
+   "Jul 2021 – Sep 2022 · Mumbai, India",
+   "juil. 2021 – sept. 2022 · Mumbai, Inde"
+  ],
+  [
+   "Automated SAP–SQL inventory reconciliation across 10,000+ transactions, cutting inventory errors by 20%.",
+   "Automatisation du rapprochement des stocks SAP–SQL sur plus de 10 000 transactions, avec 20 % d’erreurs d’inventaire en moins."
+  ],
+  [
+   "Built supplier performance dashboards in Power BI that cut supplier delays by 12% and lifted on-time delivery to 98%.",
+   "Tableaux de bord de performance fournisseurs dans Power BI, qui ont réduit les retards fournisseurs de 12 % et porté les livraisons à l’heure à 98 %."
+  ],
+  [
+   "Education",
+   "Formation"
+  ],
+  [
+   "MSc in Responsible Procurement &amp; Supply Chain Management",
+   "MSc Achats responsables &amp; Supply Chain Management"
+  ],
+  [
+   "Sep 2023 – Jan 2026 · Nantes, France",
+   "sept. 2023 – janv. 2026 · Nantes, France"
+  ],
+  [
+   "Coursework in AI and digital transformation, financial analysis and strategic management.",
+   "Cours en IA et transformation digitale, analyse financière et management stratégique."
+  ],
+  [
+   "Led a 6-member cross-functional team to the finals of a strategy hackathon with Grain de Sail. We pitched a sustainable procurement and inventory diversification strategy to the CEO, and the company now uses it.",
+   "J’ai mené une équipe pluridisciplinaire de 6 personnes en finale d’un hackathon stratégique avec Grain de Sail. Nous avons présenté au PDG une stratégie d’achats durables et de diversification des stocks, que l’entreprise applique aujourd’hui."
+  ],
+  [
+   "Bachelor's in Computer Science &amp; Engineering",
+   "Bachelor en informatique &amp; ingénierie"
+  ],
+  [
+   "Mumbai University",
+   "Université de Mumbai"
+  ],
+  [
+   "Jul 2017 – Jun 2021 · Mumbai, India",
+   "juil. 2017 – juin 2021 · Mumbai, Inde"
+  ],
+  [
+   "Coursework in machine learning, data structures and algorithms, database management, computer networks and big data.",
+   "Cours en machine learning, structures de données et algorithmes, bases de données, réseaux informatiques et big data."
+  ],
+  [
+   "Built a ResNet CNN trained on 6,000 MRI scans to detect Alzheimer's (88% accuracy). Published an internationally cited article reporting an 8% boost in diagnostic accuracy.",
+   "Développement d’un CNN ResNet entraîné sur 6 000 IRM pour détecter la maladie d’Alzheimer (88 % de précision). Publication d’un article cité à l’international, qui fait état d’un gain de 8 % en précision diagnostique."
+  ],
+  [
+   "Open to AI automation, process automation and finance-systems roles. Email is the fastest way to reach me.",
+   "Ouvert aux postes en automatisation IA, automatisation des processus et systèmes financiers. L’e-mail est le moyen le plus rapide de me joindre."
+  ],
+  [
+   "Email",
+   "E-mail"
+  ],
+  [
+   "(opens in a new tab)",
+   "(s’ouvre dans un nouvel onglet)"
+  ],
+  [
+   "Download PDF",
+   "Télécharger le PDF"
+  ],
+  [
+   "AI automation engineer",
+   "Ingénieur en automatisation IA"
+  ],
+  [
+   "Elsewhere",
+   "Liens"
+  ],
+  [
+   "Product names and logos are trademarks of their owners",
+   "Les noms et logos de produits sont des marques de leurs propriétaires"
+  ],
+  [
+   "Aditya Kumar Singh, AI automation engineer in Thionville, France. Production workflows that connect LLMs, ERPs and data pipelines for finance and operations teams.",
+   "Aditya Kumar Singh, ingénieur en automatisation IA à Thionville. Des workflows en production qui relient LLM, ERP et pipelines de données pour les équipes finance et opérations."
+  ],
+  [
+   "AI automation engineer in Thionville, France. Production workflows that connect LLMs, ERPs and data pipelines for finance and operations teams.",
+   "Ingénieur en automatisation IA à Thionville. Des workflows en production qui relient LLM, ERP et pipelines de données pour les équipes finance et opérations."
+  ],
+  [
+   "Aditya Kumar Singh, AI automation engineer portfolio",
+   "Aditya Kumar Singh, portfolio d’ingénieur en automatisation IA"
+  ],
+  [
+   "Aditya Kumar Singh, back to top",
+   "Aditya Kumar Singh, retour en haut"
+  ],
+  [
+   "Portrait of Aditya Kumar Singh",
+   "Portrait d’Aditya Kumar Singh"
+  ],
+  [
+   "The fines pipeline at Dott: Extract with Google Drive and Gemini, Validate with PostgreSQL and BigQuery, Approve with Sheets, Gmail and Slack, Post to NetSuite through its REST API.",
+   "Le pipeline des amendes chez Dott : extraction avec Google Drive et Gemini, validation avec PostgreSQL et BigQuery, approbation avec Sheets, Gmail et Slack, comptabilisation dans NetSuite via son API REST."
+  ],
+  [
+   "Fines pipeline diagram, scrolls sideways on small screens",
+   "Schéma du pipeline des amendes, défilement horizontal sur petit écran"
+  ],
+  [
+   "Fines pipeline. Extract: Drive search per country, Gemini, per-country prompt, JSON parsed and cleaned, dates, amounts normalised. Validate: city and country lookup, Maps geocoding fallback, issuing authority to vendor, currency, infraction type, plate vs fleet (BigQuery), duplicate reference check. Approve: weekly summary per vendor, XLS pack from template, approval request by email, replies polled from Gmail, Slack reminder after 7 days. Post: SuiteQL lookup of IDs, custom OAuth 1.0 TBA signer, HMAC-SHA256 signatures, one vendorBill per fine, status written back, Slack alert on failure. Edge cases: edge_cases table + review sheet, ops fix, re-validated. PostgreSQL is the source of truth, mirrored to BigQuery; files filed by country/city/year/month.",
+   "Pipeline des amendes. Extraire : recherche Drive par pays, Gemini avec un prompt par pays, JSON analysé et nettoyé, dates et montants normalisés. Valider : recherche ville et pays, géocodage Maps en secours, autorité émettrice associée au fournisseur, devise, type d’infraction, plaque comparée à la flotte (BigQuery), contrôle des doublons. Approuver : synthèse hebdomadaire par fournisseur, pack XLS depuis un modèle, demande d’accord par e-mail, réponses relevées dans Gmail, relance Slack après 7 jours. Comptabiliser : recherche des IDs via SuiteQL, signeur OAuth 1.0 TBA maison, signatures HMAC-SHA256, une vendorBill par amende, statut renvoyé, alerte Slack en cas d’échec. Cas particuliers : table edge_cases et feuille de revue, correction par les ops, revalidation. PostgreSQL fait foi, répliqué dans BigQuery ; fichiers classés par pays, ville, année et mois."
+  ],
+  [
+   "PR triage diagram, scrolls sideways on small screens",
+   "Schéma du tri presse, défilement horizontal sur petit écran"
+  ],
+  [
+   "Automation and orchestration tools",
+   "Outils d’automatisation et d’orchestration"
+  ],
+  [
+   "AI and LLM tools",
+   "Outils d’IA et de LLM"
+  ],
+  [
+   "Data and code tools",
+   "Outils de données et de code"
+  ],
+  [
+   "Integration and ERP tools",
+   "Outils d’intégration et d’ERP"
+  ],
+  [
+   "Monitoring, BI and design tools",
+   "Outils de monitoring, BI et design"
+  ]
+ ],
+ "raw": [
+  [
+   "download=\"Aditya_Kumar_Singh_CV.pdf\">Télécharger le CV</a>",
+   "download=\"Aditya_Kumar_Singh_CV.pdf\"><span class=\"nav__cv-verb\">Télécharger le </span>CV</a>"
+  ],
+  [
+   "<html lang=\"en\"",
+   "<html lang=\"fr\""
+  ],
+  [
+   "<meta property=\"og:locale\" content=\"en_GB\">",
+   "<meta property=\"og:locale\" content=\"fr_FR\">\n<meta property=\"og:locale:alternate\" content=\"en_GB\">"
+  ],
+  [
+   "<link rel=\"canonical\" href=\"https://adityasinqh.github.io/\">",
+   "<link rel=\"canonical\" href=\"https://adityasinqh.github.io/fr/\">"
+  ],
+  [
+   "<meta property=\"og:url\" content=\"https://adityasinqh.github.io/\">",
+   "<meta property=\"og:url\" content=\"https://adityasinqh.github.io/fr/\">"
+  ],
+  [
+   "<a class=\"nav__link\" href=\"fr/\" hreflang=\"fr\" lang=\"fr\">Français</a>",
+   "<a class=\"nav__link\" href=\"../\" hreflang=\"en\" lang=\"en\">English</a>"
+  ],
+  [
+   "href=\"Aditya_Kumar_SINGH_CV.pdf\"",
+   "href=\"../Aditya_Kumar_SINGH_CV.pdf\""
+  ],
+  [
+   "src=\"img/",
+   "src=\"../img/"
+  ]
+ ]
+}

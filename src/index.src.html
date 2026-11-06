@@ -8,6 +8,9 @@
 <meta name="description" content="Aditya Kumar Singh, AI automation engineer in Thionville, France. Production workflows that connect LLMs, ERPs and data pipelines for finance and operations teams.">
 <meta name="author" content="Aditya Kumar Singh">
 <link rel="canonical" href="https://adityasinqh.github.io/">
+<link rel="alternate" hreflang="en" href="https://adityasinqh.github.io/">
+<link rel="alternate" hreflang="fr" href="https://adityasinqh.github.io/fr/">
+<link rel="alternate" hreflang="x-default" href="https://adityasinqh.github.io/">
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Aditya Kumar Singh">
 <meta property="og:title" content="Aditya Kumar Singh | AI Automation Engineer">
@@ -29,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Aditya Kumar Singh",
-  "jobTitle": "AI Automation Specialist",
+  "jobTitle": "AI Automation Engineer",
   "description": "AI automation engineer who connects LLMs, ERPs and data pipelines for finance and operations teams.",
   "url": "https://adityasinqh.github.io/",
   "email": "mailto:aditya.k.singh1229@gmail.com",
@@ -77,13 +80,36 @@
 /* hero: the user's 99-character headline, kept whole at a smaller size */
 .hero h1 { font-size: clamp(34px, 2.1vw + 18px, 50px); line-height: 1.06; max-width: 24ch; }
 .hero .hero__lead { max-width: 54ch; font-size: 18px; }
+/* hero: who, where, and the face */
+.hero__id { display: flex; align-items: center; gap: var(--s-4); }
+.hero__photo { width: 64px; height: 64px; flex: none; border-radius: 50%; object-fit: cover; object-position: 50% 30%; background: var(--surface); }
+.hero__id p { display: grid; gap: 2px; font-size: var(--t-small); line-height: 1.4; }
+.hero__name { font-weight: 500; font-size: var(--t-body); }
+.hero__fact { color: var(--muted); }
+/* below 1024 the hero takes its content's height, so Safari's toolbar can never push the pipeline over Work */
+@media (min-width: 1024px) and (max-height: 760px) {
+  html body main > section.hero { height: auto; min-height: 100svh; }
+  html body main > section.hero > .wrap { height: auto; }
+  .hero .pipe__list { grid-auto-rows: auto; }
+}
+@media (max-width: 1023px) {
+  html body main > section.hero { height: auto; min-height: 0; }
+  html body main > section.hero > .wrap { height: auto; }
+  .hero--split .hero__media { flex: none; min-height: 0; }
+  .hero .pipe { height: auto; }
+}
+/* a client review under the Fiverr role */
+.job-quote { display: grid; gap: var(--s-2); padding-left: var(--s-4); border-left: 1px solid currentColor; }
+.job-quote blockquote p { font-family: var(--font-display); font-size: 20px; line-height: 1.35; text-wrap: pretty; }
+.job-quote__by { font-size: var(--t-small); color: var(--muted); }
+@media (max-width: 1023px) and (min-width: 640px) { #experience .job.grid > .job-quote { grid-column: 2; } }
 
 /* hero window: the fines pipeline */
 .pipe { display: flex; flex-direction: column; height: 100%; background: var(--card, #f4ede1); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; }
 .pipe__bar { display: flex; align-items: center; gap: var(--s-3); padding: var(--s-4) var(--s-5); background: color-mix(in oklab, var(--ink) 5%, transparent); }
 .pipe__title { font-weight: 500; font-size: var(--t-small); }
 .pipe__meta { margin-left: auto; display: inline-flex; align-items: center; gap: var(--s-2); font-size: var(--t-label); color: var(--ink); }
-.pipe__list { list-style: none; margin: 0; padding: var(--s-5) var(--s-5) 128px; display: grid; gap: var(--s-3); flex: 1; grid-auto-rows: minmax(0, 1fr); align-content: stretch; }
+.pipe__list { list-style: none; margin: 0; padding: var(--s-5); display: grid; gap: var(--s-3); flex: 1; grid-auto-rows: minmax(0, 1fr); align-content: stretch; }
 @media (max-width: 1023px) { .pipe__list { padding-bottom: var(--s-5); grid-auto-rows: auto; } }
 .pipe__step { position: relative; display: grid; grid-template-columns: 32px 1fr auto; gap: var(--s-4); align-items: center; padding: var(--s-4) var(--s-5); border: 1px solid var(--line); border-radius: var(--r-md); background: var(--bg); }
 .pipe__step + .pipe__step::before { content: ""; position: absolute; left: calc(var(--s-5) + 15px); top: calc(-1 * var(--s-3) - 1px); height: var(--s-3); border-left: 2px solid color-mix(in oklab, var(--ink) 35%, transparent); }
@@ -191,6 +217,8 @@ html[data-motion] { --motion-layer: on; }
   #experience .job.grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   #experience .job.grid > * { grid-column: auto; }
 }
+/* the French nav button drops its verb on the narrowest phones */
+@media (max-width: 380px) { .nav:not(.is-open) .nav__cv-verb { display: none; } }
 @media (max-width: 639px) {
   .nav__bar .nav__logo { font-size: clamp(14px, 3.9vw, 18px); }
   .nav__bar .nav__logo .mark { display: none; }
@@ -217,7 +245,7 @@ html body main > section.section:not(.hero) > .wrap, html body footer.closing > 
 .footer .footer__col h3 { font: 500 var(--t-small)/1.4 var(--font-text); letter-spacing: 0; color: var(--muted); margin-bottom: var(--s-4); }
 
 /* contact links in the close */
-.contact-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gutter, 24px); margin-bottom: var(--s-6); }
+.contact-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gutter, 24px); margin-bottom: var(--s-6); }
 .contact-link { display: inline-flex; align-items: center; gap: var(--s-4); padding: var(--s-4) var(--s-5); border: 1px solid var(--line); border-radius: var(--r-md); color: var(--ink); text-decoration: none; min-width: 0; }
 .contact-text { display: grid; gap: 2px; min-width: 0; }
 /* contact cards answer the pointer like the kit's buttons: a border on hover, a small press */
@@ -244,6 +272,7 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
 .contact-label { font-size: var(--t-label); font-weight: 500; color: var(--muted); }
 .contact-value { font-size: var(--t-body); overflow-wrap: anywhere; }
 .contact-icon { width: 28px; height: 28px; flex: none; }
+@media (min-width: 640px) and (max-width: 1279px) { .contact-links { grid-template-columns: repeat(2, minmax(0, 1fr)); } .contact-links > :first-child { grid-column: 1 / -1; } }
 @media (max-width: 639px) { .contact-links { grid-template-columns: 1fr; gap: var(--s-3); } }
 </style>
 </head>
@@ -262,6 +291,7 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
       <div class="nav__item"><a class="nav__link" href="#skills">Skills</a></div>
       <div class="nav__item"><a class="nav__link" href="#experience">Experience</a></div>
       <div class="nav__item"><a class="nav__link" href="#contact">Contact</a></div>
+      <div class="nav__item"><a class="nav__link" href="fr/" hreflang="fr" lang="fr">Français</a></div>
     </nav>
     <div class="nav__actions">
       <a class="btn btn--primary" href="Aditya_Kumar_SINGH_CV.pdf" download="Aditya_Kumar_Singh_CV.pdf">Download CV</a>
@@ -278,13 +308,17 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
       <div class="hero__text span-6">
         <h1 id="headline">I build AI automations that connect LLMs, ERPs and data pipelines for finance and operations teams.</h1>
         <p class="hero__lead">Somewhere in your office, there’s a John copying numbers from a PDF into a spreadsheet at 6pm. As an AI automation engineer, this pains me. So to save John a couple of hours every day, I get tools that never talked to each other chatting, teach them what to do, and make sure the right update lands with the right person. Less busywork, fewer mistakes, more time for work that actually needs John.</p>
+        <div class="hero__id">
+          <img class="hero__photo" src="img/aditya-kumar-singh.jpg" alt="Portrait of Aditya Kumar Singh" width="480" height="480" decoding="async" fetchpriority="high">
+          <p><span class="hero__name">Aditya Kumar Singh</span><span class="hero__fact">Open to AI automation roles in Paris or Thionville</span></p>
+        </div>
         <div class="btn-row">
           <a class="btn btn--primary" href="Aditya_Kumar_SINGH_CV.pdf" download="Aditya_Kumar_Singh_CV.pdf">Download CV<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
           <a class="btn btn--secondary" href="#contact">Get in touch</a>
         </div>
       </div>
       <div class="hero__media span-6 start-7" style="background: none">
-        <div class="pipe" role="img" aria-label="The fines pipeline at Dott: Extract with Google Drive and Gemini, Validate with PostgreSQL and BigQuery, Approve with Sheets, Gmail and Slack, Post to NetSuite through its REST API. 30,000+ fine backlog cleared.">
+        <div class="pipe" role="img" aria-label="The fines pipeline at Dott: Extract with Google Drive and Gemini, Validate with PostgreSQL and BigQuery, Approve with Sheets, Gmail and Slack, Post to NetSuite through its REST API.">
           <div class="pipe__bar">
             <span class="pipe__title">Fines pipeline</span>
             <span class="pipe__meta"><img decoding="async" class="ic ic-20 ic-wide" src="assets/icons/n8n.svg" alt="" width="40" height="21">self-hosted on <img decoding="async" class="ic ic-20 ic-land" src="assets/icons/docker.svg" alt="" width="40" height="29"></span>
@@ -311,10 +345,6 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
               <span class="pipe__tag">NetSuite REST API</span>
             </li>
           </ol>
-        </div>
-        <div class="ly-float">
-          <div class="ly-float__row"><span class="ly-live">Dott, Finance</span><span>2025 to 2026</span></div>
-          <div class="ly-float__title">Cleared a 30,000+ fine backlog</div>
         </div>
       </div>
     </div></div>
@@ -454,11 +484,11 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
       </div>
       <div class="group">
         <dl class="facts">
-            <div class="fact"><dt>Problem</dt><dd>Every country, and often every city, uses its own layout, language and payment reference. Manual keying could not keep pace, so a backlog built up and late payments drew penalties.</dd></div>
-            <div class="fact"><dt>Approach</dt><dd>The pipeline extracts each fine with country-specific AI prompts, then validates and deduplicates the data in BigQuery and PostgreSQL. Each fine passes an approval step and posts as its own vendor bill, so every city payment reference reconciles cleanly.</dd></div>
-            <div class="fact"><dt>Tools</dt><dd>Self-hosted n8n on Docker, Gemini for extraction, and PostgreSQL as the central store, mirrored to BigQuery for reporting. For NetSuite's REST API, I wrote a custom OAuth 1.0 TBA (HMAC-SHA256) signer, because n8n's built-in credential could not handle it.</dd></div>
-            <div class="fact"><dt>Result</dt><dd>Manual bill creation is gone: approved fines post to NetSuite without data entry, and Finance reviews exceptions instead of typing invoices. The pipeline started in Germany and was rolled out to Finland and Norway, with root-cause fixes so recurring errors did not come back.</dd></div>
-            <div class="fact"><dt>My role</dt><dd>I owned it from start to finish. I gathered requirements with Finance and local operations, designed the pipeline, built the ERP integration and scoped each new country's rollout.</dd></div>
+            <div class="fact"><dt>Problem</dt><dd>Each country, often each city, has its own layout, language and payment reference. Manual keying fell behind, and late payments drew penalties.</dd></div>
+            <div class="fact"><dt>Approach</dt><dd>Country-specific prompts extract each fine; PostgreSQL and BigQuery validate and deduplicate it. After approval it posts as its own vendor bill, so every payment reference reconciles.</dd></div>
+            <div class="fact"><dt>Tools</dt><dd>n8n on Docker, Gemini, PostgreSQL mirrored to BigQuery. I wrote a custom OAuth 1.0 TBA (HMAC-SHA256) signer for NetSuite's REST API, which n8n's built-in credential could not handle.</dd></div>
+            <div class="fact"><dt>Result</dt><dd>No more manual bills: Finance reviews exceptions instead of typing invoices. Launched in Germany, then rolled out to Finland and Norway.</dd></div>
+            <div class="fact"><dt>My role</dt><dd>End to end: requirements with Finance and local operations, the pipeline design, the ERP integration and each country's rollout.</dd></div>
           </dl>
       </div>
     </div>
@@ -519,11 +549,11 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
       </div>
       <div class="group">
         <dl class="facts">
-            <div class="fact"><dt>Problem</dt><dd>Real press inquiries were buried among collaboration pitches, and every answer had to match official company positions. Replies often took a week.</dd></div>
-            <div class="fact"><dt>Approach</dt><dd>The workflow takes only the first message in a thread and passes it to a Gemini agent. For collaboration requests the agent returns an empty output, and the workflow stops. For real inquiries, it pulls answers from Dott and German TIER Q&amp;A documents and saves an HTML reply as a Gmail draft in the thread.</dd></div>
-            <div class="fact"><dt>Tools</dt><dd>n8n as the automation platform, Gmail for the trigger and drafts, Gemini as the language model, and Google Docs as the Q&amp;A knowledge source.</dd></div>
-            <div class="fact"><dt>Result</dt><dd>The assistant acts as a first-pass filter. It skips follow-ups and collaboration spam. Every real inquiry has a concise, localized draft waiting in its thread when the team opens it.</dd></div>
-            <div class="fact"><dt>My role</dt><dd>I architected the workflow end to end: the Gmail, Google Docs and Gemini integrations, the classification prompt and the filtering logic.</dd></div>
+            <div class="fact"><dt>Problem</dt><dd>Real press inquiries were buried under collaboration pitches, and every answer had to match the official position. Replies took a week.</dd></div>
+            <div class="fact"><dt>Approach</dt><dd>A Gemini agent reads the first message of each thread. Collaboration requests get no reply; real inquiries get an answer from the Dott and TIER Q&amp;A documents, saved as a Gmail draft in the thread.</dd></div>
+            <div class="fact"><dt>Tools</dt><dd>n8n, Gmail for the trigger and drafts, Gemini, and Google Docs as the knowledge source.</dd></div>
+            <div class="fact"><dt>Result</dt><dd>Every real inquiry has a short, localized draft waiting in its thread; follow-ups and spam are skipped.</dd></div>
+            <div class="fact"><dt>My role</dt><dd>End to end: the integrations, the classification prompt and the filtering logic.</dd></div>
           </dl>
       </div>
     </div>
@@ -560,7 +590,7 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
           <h3 class="span-6">Automation &amp; Orchestration</h3>
           <div class="span-6 start-7"><ul class="ic-chip-row" aria-label="Automation and orchestration tools">
             <li class="ic-chip"><img loading="lazy" decoding="async" class="ic ic-wide" src="assets/icons/n8n.svg" alt="" width="40" height="21">n8n (self-hosted, Code nodes)</li>
-            <li class="ic-chip">Make</li>
+            <li class="ic-chip"><img loading="lazy" decoding="async" class="ic ic-land" src="assets/icons/make.svg" alt="" width="40" height="29">Make</li>
             <li class="ic-chip">Power Automate</li>
             <li class="ic-chip"><img loading="lazy" decoding="async" class="ic ic-wide" src="assets/icons/zapier.svg" alt="" width="40" height="11">Zapier</li>
           </ul></div>
@@ -594,7 +624,7 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
             <li class="ic-chip">REST APIs</li>
             <li class="ic-chip"><img loading="lazy" decoding="async" class="ic" src="assets/icons/oauth.svg" alt="" width="40" height="40">OAuth 1.0 (TBA)</li>
             <li class="ic-chip"><img loading="lazy" decoding="async" class="ic" src="assets/icons/oauth.svg" alt="" width="40" height="40">OAuth 2.0</li>
-            <li class="ic-chip">Webhooks</li>
+            <li class="ic-chip"><img loading="lazy" decoding="async" class="ic" src="assets/icons/webhooks.svg" alt="" width="40" height="37">Webhooks</li>
             <li class="ic-chip"><img loading="lazy" decoding="async" class="ic" src="assets/icons/fastapi.svg" alt="" width="40" height="40">FastAPI</li>
             <li class="ic-chip"><img loading="lazy" decoding="async" class="ic ic-wide" src="assets/icons/sap.svg" alt="" width="40" height="20">SAP</li>
           </ul></div>
@@ -644,6 +674,10 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
               <li>Delivered 100 projects for 35 clients across APAC with a 5.0/5.0 rating across 100+ reviews, scoping each with a project charter, measurable KPIs and agreed success criteria.</li>
               <li>Built automated reporting in Power BI and Microsoft Fabric (ETL, lakehouse/DWH, DAX time intelligence) with decision-focused dashboards, cutting manual reporting by 5–10 hours per client per week.</li>
             </ul>
+            <figure class="job-quote span-6 start-7">
+              <blockquote lang="en"><p>“This is the guy! He invested his own time to learn my subject matter and went on to produce a great quality product! Definitely will recommend to others!”</p></blockquote>
+              <p class="job-quote__by">hectorponce10, Fiverr client, United States · 5 stars</p>
+            </figure>
           </li>
           <li class="job grid" id="job-mahindra">
             <div class="job-head span-6">
@@ -714,8 +748,14 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
             <span class="contact-value">aditya-kumar-sinqh</span>
           </span>
         </a>
+        <a class="contact-link" href="Aditya_Kumar_SINGH_CV.pdf" download="Aditya_Kumar_Singh_CV.pdf">
+          <img loading="lazy" decoding="async" class="contact-icon" src="assets/icons/pdf2.svg" alt="" width="28" height="28">
+          <span class="contact-text">
+            <span class="contact-label">CV</span>
+            <span class="contact-value">Download PDF</span>
+          </span>
+        </a>
       </div>
-      <a class="btn btn--primary btn--xl btn--wide" href="Aditya_Kumar_SINGH_CV.pdf" download="Aditya_Kumar_Singh_CV.pdf">Download CV<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
     </div>
     <div class="closing__links">
       <div class="grid">

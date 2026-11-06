@@ -307,7 +307,7 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
     <div class="wrap"><div class="hero-text grid hero__grid">
       <div class="hero__text span-6">
         <h1 id="headline">I build AI automations that connect LLMs, ERPs and data pipelines for finance and operations teams.</h1>
-        <p class="hero__lead">Somewhere in your office, there’s a John copying numbers from a PDF into a spreadsheet at 6pm. As an AI automation engineer, this pains me. So to save John a couple of hours every day, I get tools that never talked to each other chatting, teach them what to do, and make sure the right update lands with the right person. Less busywork, fewer mistakes, more time for work that actually needs John.</p>
+        <p class="hero__lead">Somewhere in your office, John is copying numbers from a PDF into a spreadsheet at 6pm. I build the automations that do it for him: tools that never talked now share data, and the right update reaches the right person. John gets his evenings back.</p>
         <div class="hero__id">
           <img class="hero__photo" src="img/aditya-kumar-singh.jpg" alt="Portrait of Aditya Kumar Singh" width="480" height="480" decoding="async" fetchpriority="high">
           <p><span class="hero__name">Aditya Kumar Singh</span><span class="hero__fact">Open to AI automation roles in Paris or Thionville</span></p>
@@ -318,9 +318,9 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
         </div>
       </div>
       <div class="hero__media span-6 start-7" style="background: none">
-        <div class="pipe" role="img" aria-label="The fines pipeline at Dott: Extract with Google Drive and Gemini, Validate with PostgreSQL and BigQuery, Approve with Sheets, Gmail and Slack, Post to NetSuite through its REST API.">
+        <div class="pipe" role="img" aria-label="The Fines Management System at Dott: Extract with Google Drive and Gemini, Validate with PostgreSQL and BigQuery, Approve with Sheets, Gmail and Slack, Post to NetSuite through its REST API.">
           <div class="pipe__bar">
-            <span class="pipe__title">Fines pipeline</span>
+            <span class="pipe__title">Fines Management System</span>
             <span class="pipe__meta"><img decoding="async" class="ic ic-20 ic-wide" src="assets/icons/n8n.svg" alt="" width="40" height="21">self-hosted on <img decoding="async" class="ic ic-20 ic-land" src="assets/icons/docker.svg" alt="" width="40" height="29"></span>
           </div>
           <ol class="pipe__list">
@@ -401,8 +401,8 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
           <h2 id="finesTitle">Traffic fine pipeline</h2>
           <p >Scheduled n8n stages, a validation loop for edge cases, and signed REST calls into NetSuite. People approve payments and fix exceptions; the pipeline does the rest.</p>
         </div>
-        <figure class="diagram diagram-wide fill" tabindex="0" role="region" aria-label="Fines pipeline diagram, scrolls sideways on small screens">
-<svg viewBox="0 0 902 386" role="img" aria-label="Fines pipeline. Extract: Drive search per country, Gemini, per-country prompt, JSON parsed and cleaned, dates, amounts normalised. Validate: city and country lookup, Maps geocoding fallback, issuing authority to vendor, currency, infraction type, plate vs fleet (BigQuery), duplicate reference check. Approve: weekly summary per vendor, XLS pack from template, approval request by email, replies polled from Gmail, Slack reminder after 7 days. Post: SuiteQL lookup of IDs, custom OAuth 1.0 TBA signer, HMAC-SHA256 signatures, one vendorBill per fine, status written back, Slack alert on failure. Edge cases: edge_cases table + review sheet, ops fix, re-validated. PostgreSQL is the source of truth, mirrored to BigQuery; files filed by country/city/year/month.">
+        <figure class="diagram diagram-wide fill" tabindex="0" role="region" aria-label="Fines Management System diagram, scrolls sideways on small screens">
+<svg viewBox="0 0 902 386" role="img" aria-label="Fines Management System. Extract: Drive search per country, Gemini, per-country prompt, JSON parsed and cleaned, dates, amounts normalised. Validate: city and country lookup, Maps geocoding fallback, issuing authority to vendor, currency, infraction type, plate vs fleet (BigQuery), duplicate reference check. Approve: weekly summary per vendor, XLS pack from template, approval request by email, replies polled from Gmail, Slack reminder after 7 days. Post: SuiteQL lookup of IDs, custom OAuth 1.0 TBA signer, HMAC-SHA256 signatures, one vendorBill per fine, status written back, Slack alert on failure. Edge cases: edge_cases table + review sheet, ops fix, re-validated. PostgreSQL is the source of truth, mirrored to BigQuery; files filed by country/city/year/month.">
 <text class="d-sub" x="10" y="16">Scheduled n8n workflows, self-hosted on Docker</text>
 <rect class="d-box" x="10" y="30" width="204" height="200" rx="8"/>
 <text class="d-head" x="24" y="54">1  Extract</text>

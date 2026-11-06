@@ -81,10 +81,8 @@
 /* hero window: the fines pipeline */
 .pipe { display: flex; flex-direction: column; height: 100%; background: var(--card, #f4ede1); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; }
 .pipe__bar { display: flex; align-items: center; gap: var(--s-3); padding: var(--s-4) var(--s-5); background: color-mix(in oklab, var(--ink) 5%, transparent); }
-.pipe__dots { display: flex; gap: 6px; }
-.pipe__dots i { width: 10px; height: 10px; border-radius: 50%; background: color-mix(in oklab, var(--ink) 18%, transparent); }
 .pipe__title { font-weight: 500; font-size: var(--t-small); }
-.pipe__meta { margin-left: auto; display: inline-flex; align-items: center; gap: var(--s-2); font-size: var(--t-label); color: var(--muted); }
+.pipe__meta { margin-left: auto; display: inline-flex; align-items: center; gap: var(--s-2); font-size: var(--t-label); color: var(--ink); }
 .pipe__list { list-style: none; margin: 0; padding: var(--s-5) var(--s-5) 128px; display: grid; gap: var(--s-3); flex: 1; grid-auto-rows: minmax(0, 1fr); align-content: stretch; }
 @media (max-width: 1023px) { .pipe__list { padding-bottom: var(--s-5); grid-auto-rows: auto; } }
 .pipe__step { position: relative; display: grid; grid-template-columns: 32px 1fr auto; gap: var(--s-4); align-items: center; padding: var(--s-4) var(--s-5); border: 1px solid var(--line); border-radius: var(--r-md); background: var(--bg); }
@@ -98,8 +96,11 @@
 .pipe__icons .ic-tile { --tile: 36px; }
 .pipe__tag { font-size: var(--t-label); font-weight: 500; padding: 6px 10px; border-radius: var(--r-sm); background: color-mix(in oklab, var(--bg) 16%, var(--ink)); color: var(--bg); }
 .pipe__step--key .pipe__tag { background: var(--bg); color: var(--ink); }
-@media (max-width: 1023px) { .hero .ly-float { display: none; } .pipe__list { align-content: start; } .pipe__step:nth-child(n+3):not(.pipe__step--key) { display: none; } }
-@media (max-width: 639px) { .pipe__icons .ic-tile:nth-child(n+2) { display: none; } .pipe__meta { display: none; } .pipe__step { padding: var(--s-3) var(--s-4); } .pipe__step:nth-child(2) { display: none; } .pipe__list { padding: var(--s-3); gap: var(--s-2); } .pipe__bar { display: none; } .pipe__step .pipe__sub { display: none; } .pipe__step + .pipe__step::before { display: none; } .hero .ly-float { display: none; } }
+@media (max-width: 1023px) { .hero .ly-float { display: none; } .pipe__list { align-content: start; } .pipe__step .pipe__sub { display: none; } .pipe__step { padding: var(--s-3) var(--s-4); } }
+@media (min-width: 1024px) and (max-width: 1279px) { .pipe__step .pipe__sub { display: none; } }
+/* a phone: all four steps stay, compact enough to fit the hero's remaining height */
+@media (max-width: 639px) { .pipe__num { width: 28px; height: 28px; } .hero .pipe__step { padding: 6px var(--s-3); gap: var(--s-3); grid-template-columns: 28px 1fr auto; } .pipe__icons .ic-tile { --tile: 30px; } .pipe__tag { padding: 4px 8px; } }
+@media (max-width: 639px) { .pipe__icons .ic-tile:nth-child(n+2) { display: none; } .pipe__meta { display: none; } .pipe__step { padding: var(--s-3) var(--s-4); } .pipe__list { padding: var(--s-3); gap: var(--s-2); } .pipe__bar { display: none; } .pipe__step .pipe__sub { display: none; } .pipe__step + .pipe__step::before { display: none; } .hero .ly-float { display: none; } }
 
 /* work: two case cards, details open under them */
 .case { display: flex; flex-direction: column; gap: var(--s-4); }
@@ -192,7 +193,6 @@ html[data-motion] { --motion-layer: on; }
 @media (max-width: 1023px) and (min-width: 640px) {
   #experience .job.grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   #experience .job.grid > * { grid-column: auto; }
-  #education .job { padding-block: var(--s-7); }
 }
 @media (max-width: 639px) {
   #work, #skills, #experience { --hm: 2; }
@@ -202,27 +202,36 @@ html[data-motion] { --motion-layer: on; }
   .hero .hero__lead { font-size: 16px; line-height: 1.5; }
   .enable-list { gap: var(--s-6); } .enable-item { padding-bottom: var(--s-6); }
   .job { padding-block: var(--s-4); }
+  #education .job { row-gap: var(--s-2); padding-block: var(--s-2); }
+  #education .job ul { gap: var(--s-1); }
+  #enablement .enable-list .enable-item { padding-block: var(--s-3); }
 }
-/* desktop air: the short sections breathe to fill their screen */
-@media (min-width: 1280px) {
-  .enable-list { gap: var(--s-9); } .enable-item { padding-bottom: var(--s-9); }
-  #education .job { padding-block: var(--s-7); }
-}
-/* 1024 to 1279: the narrower columns make three sections two screens tall */
-@media (min-width: 1024px) and (max-width: 1279px) {
+/* the lists and cards share whatever height their screens leave, in equal rows, so the spare space
+   falls evenly between the entries instead of pooling under the last one */
+#work > .wrap > .grid, #skills .skill-rows, #experience .jobs, #education .jobs { flex: 1 0 auto; align-content: stretch; }
+#skills .skill-rows, #experience .jobs, #education .jobs { display: grid; }
+.skill, .job { align-content: start; }
+#enablement > .wrap { align-content: stretch; }
+@media (max-width: 1023px) { #enablement > .wrap { grid-template-rows: auto 1fr; } }
+#enablement .enable-list { align-self: stretch; align-content: stretch; gap: 0; }
+#enablement .enable-item { align-content: start; padding-block: var(--s-5); border-bottom: 0; border-top: 1px solid var(--line); }
+@media (min-width: 1024px) { #enablement .enable-item:first-child { padding-top: 0; border-top: 0; } }
+/* 1024 to 1279, and any desktop shorter than 860px: the content outgrows one screen, so three sections
+   take two (on a short wide screen they would otherwise run into the next section) */
+@media (min-width: 1024px) and (max-width: 1279px), (min-width: 1280px) and (max-height: 860px) {
   #work, #skills, #experience { --h: 2; }
   #work .case { grid-column: 1 / -1; }
-  .skill { padding-block: var(--s-7); }
-  #experience .job { padding-block: var(--s-7); }
 }
 /* a short tablet (768x1024): Experience takes two screens there */
 @media (min-width: 640px) and (max-width: 1023px) and (max-height: 1100px) {
   #experience { --h: 2; }
-  #experience .job { padding-block: var(--s-8); }
   #work .card.case { gap: var(--s-3); padding: var(--s-5); }
 }
 /* hero headline on three lines from 1280 */
 @media (min-width: 1024px) { .hero h1 { font-size: clamp(34px, 1.6vw + 18px, 42px); max-width: none; } }
+
+/* footer column titles: h3 under the Contact h2, in the kit's footer-label look */
+.footer .footer__col h3 { font: 500 var(--t-small)/1.4 var(--font-text); letter-spacing: 0; color: var(--muted); margin-bottom: var(--s-4); }
 
 /* contact links in the close */
 .contact-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gutter, 24px); margin-bottom: var(--s-6); }
@@ -273,25 +282,24 @@ html[data-motion] { --motion-layer: on; }
       <div class="hero__media span-6 start-7" style="background: none">
         <div class="pipe" role="img" aria-label="The fines pipeline at Dott: Extract with Google Drive and Gemini, Validate with PostgreSQL and BigQuery, Approve with Sheets, Gmail and Slack, Post to NetSuite through its REST API. 30,000+ fine backlog cleared.">
           <div class="pipe__bar">
-            <span class="pipe__dots" aria-hidden="true"><i></i><i></i><i></i></span>
             <span class="pipe__title">Fines pipeline</span>
-            <span class="pipe__meta"><img loading="lazy" decoding="async" class="ic ic-20 ic-wide" src="assets/icons/n8n.svg" alt="" width="40" height="21">self-hosted on <img loading="lazy" decoding="async" class="ic ic-20 ic-land" src="assets/icons/docker.svg" alt="" width="40" height="29"></span>
+            <span class="pipe__meta"><img decoding="async" class="ic ic-20 ic-wide" src="assets/icons/n8n.svg" alt="" width="40" height="21">self-hosted on <img decoding="async" class="ic ic-20 ic-land" src="assets/icons/docker.svg" alt="" width="40" height="29"></span>
           </div>
           <ol class="pipe__list">
             <li class="pipe__step">
               <span class="pipe__num">1</span>
               <span><span class="pipe__name">Extract</span><br><span class="pipe__sub">Gemini, per-country prompt</span></span>
-              <span class="pipe__icons"><span class="ic-tile"><img loading="lazy" decoding="async" class="ic ic-tall" src="assets/icons/google-drive.svg" alt="" width="40" height="37"></span><span class="ic-tile"><img loading="lazy" decoding="async" class="ic" src="assets/icons/pdf2.svg" alt="" width="40" height="40"></span><span class="ic-tile"><img loading="lazy" decoding="async" class="ic" src="assets/icons/gemini.svg" alt="" width="40" height="40"></span></span>
+              <span class="pipe__icons"><span class="ic-tile"><img decoding="async" class="ic ic-tall" src="assets/icons/google-drive.svg" alt="" width="40" height="37"></span><span class="ic-tile"><img decoding="async" class="ic" src="assets/icons/pdf2.svg" alt="" width="40" height="40"></span><span class="ic-tile"><img decoding="async" class="ic" src="assets/icons/gemini.svg" alt="" width="40" height="40"></span></span>
             </li>
             <li class="pipe__step">
               <span class="pipe__num">2</span>
               <span><span class="pipe__name">Validate</span><br><span class="pipe__sub">plate vs fleet, duplicate reference check</span></span>
-              <span class="pipe__icons"><span class="ic-tile"><img loading="lazy" decoding="async" class="ic" src="assets/icons/postgres.svg" alt="" width="39" height="40"></span><span class="ic-tile"><img loading="lazy" decoding="async" class="ic" src="assets/icons/googlebigquery.svg" alt="" width="40" height="40"></span><span class="ic-tile"><img loading="lazy" decoding="async" class="ic ic-tall" src="assets/icons/google-maps.svg" alt="" width="28" height="40"></span></span>
+              <span class="pipe__icons"><span class="ic-tile"><img decoding="async" class="ic" src="assets/icons/postgres.svg" alt="" width="39" height="40"></span><span class="ic-tile"><img decoding="async" class="ic" src="assets/icons/googlebigquery.svg" alt="" width="40" height="40"></span><span class="ic-tile"><img decoding="async" class="ic ic-tall" src="assets/icons/google-maps.svg" alt="" width="28" height="40"></span></span>
             </li>
             <li class="pipe__step">
               <span class="pipe__num">3</span>
               <span><span class="pipe__name">Approve</span><br><span class="pipe__sub">weekly summary per vendor</span></span>
-              <span class="pipe__icons"><span class="ic-tile"><img loading="lazy" decoding="async" class="ic ic-tall" src="assets/icons/google-sheets.svg" alt="" width="30" height="40"></span><span class="ic-tile"><img loading="lazy" decoding="async" class="ic ic-land" src="assets/icons/gmail.svg" alt="" width="40" height="32"></span><span class="ic-tile"><img loading="lazy" decoding="async" class="ic" src="assets/icons/slack.svg" alt="" width="40" height="40"></span></span>
+              <span class="pipe__icons"><span class="ic-tile"><img decoding="async" class="ic ic-tall" src="assets/icons/google-sheets.svg" alt="" width="30" height="40"></span><span class="ic-tile"><img decoding="async" class="ic ic-land" src="assets/icons/gmail.svg" alt="" width="40" height="32"></span><span class="ic-tile"><img decoding="async" class="ic" src="assets/icons/slack.svg" alt="" width="40" height="40"></span></span>
             </li>
             <li class="pipe__step pipe__step--key">
               <span class="pipe__num">4</span>
@@ -604,7 +612,7 @@ html[data-motion] { --motion-layer: on; }
   <section class="section ground-inverse" id="experience" aria-labelledby="expTitle">
     <div class="wrap">
         <div class="section-head">
-          <h2 id="expTitle">Experience &amp; Education</h2>
+          <h2 id="expTitle">Experience</h2>
           <p>Where I have worked, 2021 to 2026.</p>
         </div>
         <ol class="jobs">
@@ -655,7 +663,7 @@ html[data-motion] { --motion-layer: on; }
         <ol class="jobs">
           <li class="job grid">
             <div class="job-head span-6">
-              <h4>MSc in Responsible Procurement &amp; Supply Chain Management</h4>
+              <h3>MSc in Responsible Procurement &amp; Supply Chain Management</h3>
               <p class="job-org">Audencia Business School (Grande École)</p>
               <p class="job-when">Sep 2023 – Jan 2026 · Nantes, France</p>
             </div>
@@ -666,7 +674,7 @@ html[data-motion] { --motion-layer: on; }
           </li>
           <li class="job grid">
             <div class="job-head span-6">
-              <h4>Bachelor's in Computer Science &amp; Engineering</h4>
+              <h3>Bachelor's in Computer Science &amp; Engineering</h3>
               <p class="job-org">Mumbai University</p>
               <p class="job-when">Jul 2017 – Jun 2021 · Mumbai, India</p>
             </div>
@@ -711,8 +719,8 @@ html[data-motion] { --motion-layer: on; }
           <a class="nav__logo" href="#top"><span class="mark" data-mark="dots" aria-hidden="true"></span>Aditya Kumar Singh</a>
           <p class="footer__lede">AI automation engineer</p>
         </div>
-        <div class="span-3 start-7 footer__col"><h4>Sections</h4><ul><li><a href="#work">Work</a></li><li><a href="#enablement">Enablement</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li></ul></div>
-        <div class="span-3 footer__col"><h4>Elsewhere</h4><ul><li><a href="mailto:aditya.k.singh1229@gmail.com">Email</a></li><li><a href="https://www.linkedin.com/in/aditya-kumar-sinqh" rel="noopener" target="_blank">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li></ul></div>
+        <div class="span-3 start-7 footer__col"><h3>Sections</h3><ul><li><a href="#work">Work</a></li><li><a href="#enablement">Enablement</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li></ul></div>
+        <div class="span-3 footer__col"><h3>Elsewhere</h3><ul><li><a href="mailto:aditya.k.singh1229@gmail.com">Email</a></li><li><a href="https://www.linkedin.com/in/aditya-kumar-sinqh" rel="noopener" target="_blank">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li></ul></div>
       </div>
       <div class="footer__legal">
         <span>© <span id="year">2026</span> Aditya Kumar Singh, adityasinqh.github.io</span>

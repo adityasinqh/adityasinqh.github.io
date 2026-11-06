@@ -220,6 +220,27 @@ html body main > section.section:not(.hero) > .wrap, html body footer.closing > 
 .contact-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gutter, 24px); margin-bottom: var(--s-6); }
 .contact-link { display: inline-flex; align-items: center; gap: var(--s-4); padding: var(--s-4) var(--s-5); border: 1px solid var(--line); border-radius: var(--r-md); color: var(--ink); text-decoration: none; min-width: 0; }
 .contact-text { display: grid; gap: 2px; min-width: 0; }
+/* contact cards answer the pointer like the kit's buttons: a border on hover, a small press */
+html:not([data-motion="off"]) .contact-link { transition: border-color var(--m-out) var(--m-ease), background-color var(--m-out) var(--m-ease), transform var(--m-press) var(--m-ease); }
+html:not([data-motion="off"]) .contact-link:active { transform: scale(.985); }
+@media (hover: hover) and (pointer: fine) {
+  html:not([data-motion="off"]) .contact-link:hover { border-color: var(--line-strong); background-color: color-mix(in oklab, var(--ink) 4%, transparent); transition-duration: var(--m-in), var(--m-in), var(--m-press); }
+}
+
+/* hero pipeline: on first load the four steps arrive in order (explanation: the flow reads 1 to 4),
+   then the result badge; once, never on scroll */
+@keyframes pipe-in { from { opacity: 0; transform: translateY(8px); } }
+@keyframes pipe-fade { from { opacity: 0; } }
+html:not([data-motion="off"]) .hero .pipe__step, html:not([data-motion="off"]) .hero .ly-float { animation: pipe-in 420ms var(--m-ease) both; }
+html:not([data-motion="off"]) .hero .pipe__step:nth-child(1) { animation-delay: 150ms; }
+html:not([data-motion="off"]) .hero .pipe__step:nth-child(2) { animation-delay: 210ms; }
+html:not([data-motion="off"]) .hero .pipe__step:nth-child(3) { animation-delay: 270ms; }
+html:not([data-motion="off"]) .hero .pipe__step:nth-child(4) { animation-delay: 330ms; }
+html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
+@media (prefers-reduced-motion: reduce) {
+  html:not([data-motion="off"]) .hero .pipe__step, html:not([data-motion="off"]) .hero .ly-float { animation-name: pipe-fade; animation-duration: 200ms; }
+  html:not([data-motion="off"]) .contact-link:active { transform: none; }
+}
 .contact-label { font-size: var(--t-label); font-weight: 500; color: var(--muted); }
 .contact-value { font-size: var(--t-body); overflow-wrap: anywhere; }
 .contact-icon { width: 28px; height: 28px; flex: none; }
@@ -727,7 +748,7 @@ html body main > section.section:not(.hero) > .wrap, html body footer.closing > 
     targetY = Math.max(0, Math.min(maxY, targetY));
     var dist = targetY - startY;
     if (reduceMotion || Math.abs(dist) < 2) { window.scrollTo(0, targetY); return; }
-    var dur = Math.min(1100, Math.max(450, Math.abs(dist) * 0.25));
+    var dur = Math.min(700, Math.max(400, Math.abs(dist) * 0.2));
     var t0 = null;
     root.style.scrollBehavior = 'auto';
     function step(ts) {

@@ -113,28 +113,28 @@
 .case .case-link { margin-top: auto; align-self: flex-start; }
 .case .case-summary, .case h3 { color: var(--ink); }
 .diagram { margin: 0; overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--card, #f4ede1); padding: var(--s-5); }
-.diagram svg { display: block; width: 100%; height: auto; max-height: min(500px, 40svh); }
+.diagram svg { display: block; width: 100%; height: auto; }
 .case-body .group { min-width: 0; }
-@media (max-width: 1023px) { main > section.case-body.g2 > .wrap { display: block; } .case-body .group + .group { margin-top: var(--s-8); } }
-@media (min-width: 640px) and (max-width: 1023px) {
-  .case-body .facts { grid-template-columns: minmax(0, 1fr); row-gap: var(--s-2); }
-  .case-body .facts dd + dt { margin-top: var(--s-6); }
-  .case-body .facts dd { font-size: var(--t-lead); line-height: 1.6; }
-  .case-body .diagram svg { max-height: none; }
+/* two-screen layout (1024+): the diagram grows into whatever the first screen leaves, so its labels read at 13px or more */
+@media (min-width: 1024px) {
+  .case-body .diagram.fill { display: grid; margin-top: var(--s-2); }
+  .case-body .diagram.fill svg { height: 100%; min-height: 0; }
 }
-@media (min-width: 640px) and (max-width: 1023px) and (min-height: 1101px) { .case-body .group + .group { margin-top: var(--s-9); } .case-body .facts dd + dt { margin-top: var(--s-7); } }
-
-@media (max-width: 639px) { .diagram svg { min-width: 640px; max-height: none; } }
+@media (max-width: 1023px) { main > section.case-body.g2 > .wrap { display: block; } .case-body .group + .group { margin-top: var(--s-8); } .case-body .diagram.fill { flex: none; } }
+@media (max-width: 639px) { .diagram svg { min-width: 640px; } }
 .diagram-note { max-width: 62ch; }
-.facts { display: grid; grid-template-columns: calc((100% - 11 * var(--gutter, 24px)) / 12 * 6 + 5 * var(--gutter, 24px)) minmax(0, 1fr); column-gap: var(--gutter, 24px); row-gap: var(--s-5); margin: 0; }
+
+/* the case facts: headed paragraphs balanced over two columns, a rule above each */
+.facts { margin: 0; columns: 2; column-gap: calc(var(--gutter, 24px) * 2); }
+.fact { break-inside: avoid; padding-top: var(--s-4); border-top: 1px solid var(--line); margin-bottom: var(--s-8); }
 .facts dt { font-family: var(--font-display); font-size: var(--t-card); line-height: 1.3; }
-.facts dd { margin: 0; line-height: 1.6; }
-@media (min-width: 640px) and (max-width: 1279px) {
-  .facts { grid-template-columns: calc((100% - 11 * var(--gutter, 24px)) / 12 * 3 + 2 * var(--gutter, 24px)) minmax(0, 1fr); row-gap: var(--s-3); }
-  .facts dd { line-height: 1.5; }
-}
-@media (min-width: 1024px) and (max-width: 1279px) { .facts { grid-template-columns: calc((100% - 11 * var(--gutter, 24px)) / 12 * 2 + var(--gutter, 24px)) minmax(0, 1fr); } }
-@media (max-width: 639px) { .facts { grid-template-columns: 1fr; gap: var(--s-2); } .facts dd { margin-bottom: var(--s-3); } .results { grid-template-columns: 1fr; } }
+.facts dd { margin: var(--s-2) 0 0; font-size: 18px; line-height: 1.6; max-width: 62ch; }
+@media (min-width: 1024px) and (max-height: 860px) { .facts dd { font-size: 17px; line-height: 1.5; } .fact { margin-bottom: var(--s-6); } }
+@media (min-width: 1024px) and (max-width: 1279px) { .facts dd { font-size: var(--t-body); line-height: 1.5; } }
+@media (max-width: 1023px) { .facts { columns: 1; } .fact { margin-bottom: var(--s-6); } }
+/* a tablet keeps the diagrams at a readable size and lets them scroll sideways, as a phone does */
+@media (min-width: 640px) and (max-width: 1023px) { .case-body .diagram svg { min-width: 860px; } }
+@media (max-width: 639px) { .facts dd { font-size: var(--t-body); line-height: 1.5; margin-top: var(--s-1); } .fact { border-top: 0; padding-top: 0; margin-bottom: var(--s-4); } .results { grid-template-columns: 1fr; } }
 html[data-motion] { --motion-layer: on; }
 :root { --t-h2: clamp(28px, 1.2vw + 20px, 38px); }
 
@@ -359,7 +359,7 @@ html[data-motion] { --motion-layer: on; }
           <h2 id="finesTitle">Traffic fine pipeline</h2>
           <p >Scheduled n8n stages, a validation loop for edge cases, and signed REST calls into NetSuite. People approve payments and fix exceptions; the pipeline does the rest.</p>
         </div>
-        <figure class="diagram diagram-wide" tabindex="0" role="region" aria-label="Fines pipeline diagram, scrolls sideways on small screens">
+        <figure class="diagram diagram-wide fill" tabindex="0" role="region" aria-label="Fines pipeline diagram, scrolls sideways on small screens">
 <svg viewBox="0 0 902 386" role="img" aria-label="Fines pipeline. Extract: Drive search per country, Gemini, per-country prompt, JSON parsed and cleaned, dates, amounts normalised. Validate: city and country lookup, Maps geocoding fallback, issuing authority to vendor, currency, infraction type, plate vs fleet (BigQuery), duplicate reference check. Approve: weekly summary per vendor, XLS pack from template, approval request by email, replies polled from Gmail, Slack reminder after 7 days. Post: SuiteQL lookup of IDs, custom OAuth 1.0 TBA signer, HMAC-SHA256 signatures, one vendorBill per fine, status written back, Slack alert on failure. Edge cases: edge_cases table + review sheet, ops fix, re-validated. PostgreSQL is the source of truth, mirrored to BigQuery; files filed by country/city/year/month.">
 <text class="d-sub" x="10" y="16">Scheduled n8n workflows, self-hosted on Docker</text>
 <rect class="d-box" x="10" y="30" width="204" height="200" rx="8"/>
@@ -442,16 +442,11 @@ html[data-motion] { --motion-layer: on; }
       </div>
       <div class="group">
         <dl class="facts">
-            <dt>Problem</dt>
-            <dd>Every country, and often every city, uses its own layout, language and payment reference. Manual keying could not keep pace, so a backlog built up and late payments drew penalties.</dd>
-            <dt>Approach</dt>
-            <dd>The pipeline extracts each fine with country-specific AI prompts, then validates and deduplicates the data in BigQuery and PostgreSQL. Each fine passes an approval step and posts as its own vendor bill, so every city payment reference reconciles cleanly.</dd>
-            <dt>Tools</dt>
-            <dd>Self-hosted n8n on Docker, Gemini for extraction, and PostgreSQL as the central store, mirrored to BigQuery for reporting. For NetSuite's REST API, I wrote a custom OAuth 1.0 TBA (HMAC-SHA256) signer, because n8n's built-in credential could not handle it.</dd>
-            <dt>Result</dt>
-            <dd>Manual bill creation is gone: approved fines post to NetSuite without data entry, and Finance reviews exceptions instead of typing invoices. The pipeline started in Germany and was rolled out to Finland and Norway, with root-cause fixes so recurring errors did not come back.</dd>
-            <dt>My role</dt>
-            <dd>I owned it from start to finish. I gathered requirements with Finance and local operations, designed the pipeline, built the ERP integration and scoped each new country's rollout.</dd>
+            <div class="fact"><dt>Problem</dt><dd>Every country, and often every city, uses its own layout, language and payment reference. Manual keying could not keep pace, so a backlog built up and late payments drew penalties.</dd></div>
+            <div class="fact"><dt>Approach</dt><dd>The pipeline extracts each fine with country-specific AI prompts, then validates and deduplicates the data in BigQuery and PostgreSQL. Each fine passes an approval step and posts as its own vendor bill, so every city payment reference reconciles cleanly.</dd></div>
+            <div class="fact"><dt>Tools</dt><dd>Self-hosted n8n on Docker, Gemini for extraction, and PostgreSQL as the central store, mirrored to BigQuery for reporting. For NetSuite's REST API, I wrote a custom OAuth 1.0 TBA (HMAC-SHA256) signer, because n8n's built-in credential could not handle it.</dd></div>
+            <div class="fact"><dt>Result</dt><dd>Manual bill creation is gone: approved fines post to NetSuite without data entry, and Finance reviews exceptions instead of typing invoices. The pipeline started in Germany and was rolled out to Finland and Norway, with root-cause fixes so recurring errors did not come back.</dd></div>
+            <div class="fact"><dt>My role</dt><dd>I owned it from start to finish. I gathered requirements with Finance and local operations, designed the pipeline, built the ERP integration and scoped each new country's rollout.</dd></div>
           </dl>
       </div>
     </div>
@@ -464,7 +459,7 @@ html[data-motion] { --motion-layer: on; }
           <h2 id="prTitle">PR inbox triage</h2>
           <p >The agent drafts in the sender's language; a person always reviews before anything is sent.</p>
         </div>
-        <figure class="diagram" tabindex="0" role="region" aria-label="PR triage diagram, scrolls sideways on small screens">
+        <figure class="diagram fill" tabindex="0" role="region" aria-label="PR triage diagram, scrolls sideways on small screens">
 <svg viewBox="0 0 820 282" role="img" aria-labelledby="dPrTitle">
                     <title id="dPrTitle">A new press email triggers the workflow. Only the first message in a thread continues. A Gemini agent reads the subject and body, using Dott and TIER Q&amp;A documents as knowledge. Collaboration requests return empty output and are ignored. Valid inquiries get a localized HTML draft under 150 words, saved as a Gmail draft in the thread for human review.</title>
 
@@ -512,16 +507,11 @@ html[data-motion] { --motion-layer: on; }
       </div>
       <div class="group">
         <dl class="facts">
-            <dt>Problem</dt>
-            <dd>Real press inquiries were buried among collaboration pitches, and every answer had to match official company positions. Replies often took a week.</dd>
-            <dt>Approach</dt>
-            <dd>The workflow takes only the first message in a thread and passes it to a Gemini agent. For collaboration requests the agent returns an empty output, and the workflow stops. For real inquiries, it pulls answers from Dott and German TIER Q&amp;A documents and saves an HTML reply as a Gmail draft in the thread.</dd>
-            <dt>Tools</dt>
-            <dd>n8n as the automation platform, Gmail for the trigger and drafts, Gemini as the language model, and Google Docs as the Q&amp;A knowledge source.</dd>
-            <dt>Result</dt>
-            <dd>The assistant acts as a first-pass filter. It skips follow-ups and collaboration spam. Every real inquiry has a concise, localized draft waiting in its thread when the team opens it.</dd>
-            <dt>My role</dt>
-            <dd>I architected the workflow end to end: the Gmail, Google Docs and Gemini integrations, the classification prompt and the filtering logic.</dd>
+            <div class="fact"><dt>Problem</dt><dd>Real press inquiries were buried among collaboration pitches, and every answer had to match official company positions. Replies often took a week.</dd></div>
+            <div class="fact"><dt>Approach</dt><dd>The workflow takes only the first message in a thread and passes it to a Gemini agent. For collaboration requests the agent returns an empty output, and the workflow stops. For real inquiries, it pulls answers from Dott and German TIER Q&amp;A documents and saves an HTML reply as a Gmail draft in the thread.</dd></div>
+            <div class="fact"><dt>Tools</dt><dd>n8n as the automation platform, Gmail for the trigger and drafts, Gemini as the language model, and Google Docs as the Q&amp;A knowledge source.</dd></div>
+            <div class="fact"><dt>Result</dt><dd>The assistant acts as a first-pass filter. It skips follow-ups and collaboration spam. Every real inquiry has a concise, localized draft waiting in its thread when the team opens it.</dd></div>
+            <div class="fact"><dt>My role</dt><dd>I architected the workflow end to end: the Gmail, Google Docs and Gemini integrations, the classification prompt and the filtering logic.</dd></div>
           </dl>
       </div>
     </div>

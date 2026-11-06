@@ -835,12 +835,68 @@
   [
    "Mahindra Logistics, operations",
    "Mahindra Logistics, opérations"
+  ],
+  [
+   "Close",
+   "Fermer"
+  ],
+  [
+   "Tell me a little about the role or project. I reply within two working days.",
+   "Parlez-moi du poste ou du projet. Je réponds sous deux jours ouvrés."
+  ],
+  [
+   "Your name",
+   "Votre nom"
+  ],
+  [
+   "Your email",
+   "Votre e-mail"
+  ],
+  [
+   "(optional)",
+   "(facultatif)"
+  ],
+  [
+   "Company",
+   "Entreprise"
+  ],
+  [
+   "What are you working on, and how can I help?",
+   "Sur quoi travaillez-vous, et comment puis-je aider ?"
+  ],
+  [
+   "Please fill in your name, a valid email and a message.",
+   "Merci d’indiquer votre nom, un e-mail valide et un message."
+  ],
+  [
+   "Something went wrong and the message was not sent. Please email me instead.",
+   "Une erreur est survenue et le message n’est pas parti. Écrivez-moi plutôt par e-mail."
+  ],
+  [
+   "Sending…",
+   "Envoi…"
+  ],
+  [
+   "Send message",
+   "Envoyer"
+  ],
+  [
+   "or email",
+   "ou par e-mail :"
+  ],
+  [
+   "Thanks, your message is on its way.",
+   "Merci, votre message est bien parti."
+  ],
+  [
+   "I will get back to you at the email you gave, usually within two working days.",
+   "Je vous réponds à l’adresse indiquée, en général sous deux jours ouvrés."
   ]
  ],
  "raw": [
   [
-   "download=\"Aditya_Kumar_Singh_CV.pdf\">Télécharger le CV</a>",
-   "download=\"Aditya_Kumar_Singh_CV.pdf\"><span class=\"nav__cv-verb\">Télécharger le </span>CV</a>"
+   "download=\"Aditya_Kumar_Singh_CV.pdf\" data-goatcounter-click=\"cv-nav\">Télécharger le CV</a>",
+   "download=\"Aditya_Kumar_Singh_CV.pdf\" data-goatcounter-click=\"cv-nav\"><span class=\"nav__cv-verb\">Télécharger le </span>CV</a>"
   ],
   [
    "<html lang=\"en\"",

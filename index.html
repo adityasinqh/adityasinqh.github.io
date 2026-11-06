@@ -49,6 +49,7 @@
 <meta name="site-kind" content="other">
 <meta name="page-type" content="service">
 <script>document.documentElement.className = 'js';</script>
+<script data-goatcounter="https://adityasinqh.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Hanken+Grotesk:wght@400..600&display=swap" rel="stylesheet">
@@ -2030,6 +2031,49 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
 .contact-icon { width: 28px; height: 28px; flex: none; }
 @media (min-width: 640px) and (max-width: 1279px) { .contact-links { grid-template-columns: repeat(2, minmax(0, 1fr)); } .contact-links > :first-child { grid-column: 1 / -1; } }
 @media (max-width: 639px) { .contact-links { grid-template-columns: 1fr; gap: var(--s-3); } }
+
+/* contact popup: a native modal dialog on the page's own ground */
+.cf { width: min(560px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 0; border: 1px solid var(--line-strong);
+  border-radius: var(--r-lg); background: var(--bg); color: var(--ink); box-shadow: 0 24px 64px -16px color-mix(in oklab, var(--p-ink) 35%, transparent); overflow: auto; overscroll-behavior: contain; }
+.cf::backdrop { background: color-mix(in oklab, var(--p-ink) 38%, transparent); }
+.cf__inner { position: relative; display: grid; gap: var(--s-5); padding: var(--s-6); }
+.cf__view[data-view="form"] { display: grid; gap: var(--s-5); }
+.cf__view[hidden] { display: none; }
+.cf__head { display: grid; gap: var(--s-2); padding-right: var(--s-7); }
+.cf__head h2 { font-size: var(--t-h3); line-height: 1.2; }
+.cf__head p { color: var(--muted); }
+.cf__close { position: absolute; top: var(--s-4); right: var(--s-4); display: grid; place-items: center; width: 44px; height: 44px; border-radius: var(--r-btn);
+  border: 1px solid transparent; background: none; color: var(--ink); cursor: pointer; }
+.cf__close:hover { border-color: var(--line-strong); }
+.cf__form { display: grid; gap: var(--s-4); }
+.cf__row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); }
+.cf__field { display: grid; gap: var(--s-2); min-width: 0; }
+.cf__field label { font-size: var(--t-label); font-weight: 500; color: var(--muted); }
+.cf__opt { font-weight: 400; }
+.cf__field input, .cf__field textarea { width: 100%; min-height: 48px; padding: var(--s-3) var(--s-4); border: 1px solid var(--line-strong); border-radius: var(--r-sm);
+  background: color-mix(in oklab, var(--ink) 3%, var(--bg)); color: var(--ink); font: 400 var(--t-body)/1.4 var(--font-text); }
+.cf__field textarea { min-height: 140px; resize: vertical; }
+.cf__field input::placeholder, .cf__field textarea::placeholder { color: color-mix(in oklab, var(--muted) 70%, transparent); }
+.cf__field input:focus-visible, .cf__field textarea:focus-visible { outline: 2px solid var(--action); outline-offset: 1px; border-color: var(--action); border-radius: var(--r-sm); }
+.cf__field input:user-invalid, .cf__field textarea:user-invalid { border-color: #b3261e; }
+.cf__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.cf__foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-4); }
+.cf__foot .btn { min-width: 160px; }
+.cf__foot .btn[disabled] { opacity: .6; cursor: progress; }
+.cf__alt { font-size: var(--t-small); color: var(--muted); }
+.cf__alt a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--line-strong); }
+.cf__msg { font-size: var(--t-small); }
+.cf__msg--error { color: #b3261e; }
+.cf__done { display: grid; gap: var(--s-4); justify-items: start; }
+.cf__done h2 { font-size: var(--t-h3); line-height: 1.2; }
+.cf__done p { color: var(--muted); }
+@media (max-width: 639px) { .cf__inner { padding: var(--s-5); } .cf__row { grid-template-columns: 1fr; } .cf__foot .btn { width: 100%; } }
+@keyframes cf-in { from { opacity: 0; transform: translateY(12px) scale(.98); } }
+@keyframes cf-fade { from { opacity: 0; } }
+html:not([data-motion="off"]) .cf[open] { animation: cf-in 260ms var(--m-ease); }
+html:not([data-motion="off"]) .cf[open]::backdrop { animation: cf-fade 260ms var(--m-ease); }
+@media (prefers-reduced-motion: reduce) { html:not([data-motion="off"]) .cf[open] { animation-name: cf-fade; animation-duration: 160ms; } }
+html.cf-lock { overflow: hidden; }
 </style>
 </head>
 <body>
@@ -2050,7 +2094,7 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
       <div class="nav__item"><a class="nav__link" href="fr/" hreflang="fr" lang="fr">Français</a></div>
     </nav>
     <div class="nav__actions">
-      <a class="btn btn--primary" href="Aditya_Kumar_SINGH_CV.pdf" download="Aditya_Kumar_Singh_CV.pdf">Download CV</a>
+      <a class="btn btn--primary" href="Aditya_Kumar_SINGH_CV.pdf" download="Aditya_Kumar_Singh_CV.pdf" data-goatcounter-click="cv-nav">Download CV</a>
     </div>
     <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
       <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
@@ -2069,8 +2113,8 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
           <p><span class="hero__name">Aditya Kumar Singh</span><span class="hero__fact">Open to AI automation roles in Paris or Luxembourg</span></p>
         </div>
         <div class="btn-row">
-          <a class="btn btn--primary" href="Aditya_Kumar_SINGH_CV.pdf" download="Aditya_Kumar_Singh_CV.pdf">Download CV<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
-          <a class="btn btn--secondary" href="#contact">Get in touch</a>
+          <a class="btn btn--primary" href="Aditya_Kumar_SINGH_CV.pdf" download="Aditya_Kumar_Singh_CV.pdf" data-goatcounter-click="cv-hero">Download CV<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+          <a class="btn btn--secondary" href="#contact" data-contact-open>Get in touch</a>
         </div>
       </div>
       <div class="hero__media span-6 start-7" style="background: none">
@@ -2594,21 +2638,21 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
         <p>Open to AI automation, process automation and finance-systems roles. Email is the fastest way to reach me.</p>
       </div>
       <div class="contact-links">
-        <a class="contact-link" href="mailto:aditya.k.singh1229@gmail.com">
+        <a class="contact-link" href="mailto:aditya.k.singh1229@gmail.com" data-goatcounter-click="email-contact">
           <img loading="lazy" decoding="async" class="contact-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjA0IiB3aWR0aD0iMjU2IiBoZWlnaHQ9IjIwNCI+PGRlZnM+CiAgICAgICAgPGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMTY1IiB4Mj0iMTY1IiB5MT0iNDQiIHkyPSIxNjYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iIzYwZDY3MyI+PC9zdG9wPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjAuMTciIHN0b3AtY29sb3I9IiM0MmM4NjgiPjwvc3RvcD4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIwLjM5IiBzdG9wLWNvbG9yPSIjMGViYzVmIj48L3N0b3A+CiAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iMC42MiIgc3RvcC1jb2xvcj0iIzAwYTliYiI+PC9zdG9wPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjAuODYiIHN0b3AtY29sb3I9IiMzYzkwZmYiPjwvc3RvcD4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMzE4NmZmIj48L3N0b3A+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgICAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImIiIHgxPSI4IiB4Mj0iMTg0IiB5MT0iNDYuMTMiIHkyPSI0Ni4xMyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjAuMDgiIHN0b3AtY29sb3I9IiNmZjYzYTAiPjwvc3RvcD4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIwLjMiIHN0b3AtY29sb3I9IiNmYzQxM2QiPjwvc3RvcD4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIwLjUiIHN0b3AtY29sb3I9IiNmYzQxM2QiPjwvc3RvcD4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIwLjY1IiBzdG9wLWNvbG9yPSIjZmM0MTNkIj48L3N0b3A+CiAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iMC43MiIgc3RvcC1jb2xvcj0iI2ZjNWMzMCI+PC9zdG9wPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjAuODYiIHN0b3AtY29sb3I9IiNmZWIxMGMiPjwvc3RvcD4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIwLjkxIiBzdG9wLWNvbG9yPSIjZmVjNzAwIj48L3N0b3A+CiAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iMC45NiIgc3RvcC1jb2xvcj0iI2ZmZGIwZiI+PC9zdG9wPgogICAgICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8L2RlZnM+CiAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLjQ1NDU0MiwgMCwgMCwgMS40NTQ1NDIsIC0xMS42MzYwNjMsIC0zNy44MTc2OTYpIj4KICAgICAgPHBhdGggZmlsbD0idXJsKCNhKSIgZD0iTTE0NiA0NGgzOHYxMTBjMCA2LjYyNy01LjM3MyAxMi0xMiAxMmgtMjBhNiA2IDAgMCAxLTYtNnoiPjwvcGF0aD4KICAgICAgPHBhdGggZmlsbD0iI2ZjNDEzZCIgZD0iTTQ2IDQ0SDh2MTEwYzAgNi42MjcgNS4zNzMgMTIgMTIgMTJoMjBhNiA2IDAgMCAwIDYtNnoiPjwvcGF0aD4KICAgICAgPHBhdGggZmlsbD0idXJsKCNiKSIgZD0iTTM5LjIyNiAzMC40NTZjLTguMDMzLTYuNzUyLTIwLjAxOC01LjcxNC0yNi43NyAyLjMxOS02Ljc1MiA4LjAzMi01LjcxNCAyMC4wMTcgMi4zMTkgMjYuNzdsNzYuMDc4IDYzLjk0OWE4IDggMCAwIDAgMTAuMjk1IDBsNzYuMDc4LTYzLjk1YzguMDMyLTYuNzUyIDkuMDctMTguNzM3IDIuMzE4LTI2Ljc3LTYuNzUyLTguMDMyLTE4LjczNy05LjA3LTI2Ljc2OS0yLjMxOEw5NiA3OC4xOHoiPjwvcGF0aD4KICAgIDwvZz48L3N2Zz4=" alt="" width="28" height="22" style="height:22px">
           <span class="contact-text">
             <span class="contact-label">Email</span>
             <span class="contact-value">aditya.k.singh1229@gmail.com</span>
           </span>
         </a>
-        <a class="contact-link" href="https://www.linkedin.com/in/aditya-kumar-sinqh" rel="noopener" target="_blank">
+        <a class="contact-link" href="https://www.linkedin.com/in/aditya-kumar-sinqh" rel="noopener" target="_blank" data-goatcounter-click="linkedin-contact">
           <img loading="lazy" decoding="async" class="contact-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiI+PGc+CiAgICAgICAgPHBhdGggZD0iTTIxOC4xMjMxMjIsMjE4LjEyNzM5MiBMMTgwLjE5MTkyOCwyMTguMTI3MzkyIEwxODAuMTkxOTI4LDE1OC43MjQyNjMgQzE4MC4xOTE5MjgsMTQ0LjU1OTAyMyAxNzkuOTM5MDUzLDEyNi4zMjM5OTMgMTYwLjQ2Mzc1NiwxMjYuMzIzOTkzIEMxNDAuNzA3OTI2LDEyNi4zMjM5OTMgMTM3LjY4NTI4NCwxNDEuNzU3NTg1IDEzNy42ODUyODQsMTU3LjY5Mjk4NiBMMTM3LjY4NTI4NCwyMTguMTIzNDQxIEw5OS43NTQwODk0LDIxOC4xMjM0NDEgTDk5Ljc1NDA4OTQsOTUuOTY2NTIwNyBMMTM2LjE2ODAzNiw5NS45NjY1MjA3IEwxMzYuMTY4MDM2LDExMi42NjA1NjIgTDEzNi42Nzc3MzYsMTEyLjY2MDU2MiBDMTQ0LjEwMjc0Niw5OS45NjUwMDI3IDE1Ny45MDg2MzcsOTIuMzgyNDUyOCAxNzIuNjA1Njg5LDkyLjkyODAwNzYgQzIxMS4wNTA1MzUsOTIuOTI4MDA3NiAyMTguMTM4OTI3LDExOC4yMTYwMjMgMjE4LjEzODkyNywxNTEuMTE0MTUxIEwyMTguMTIzMTIyLDIxOC4xMjczOTIgWiBNNTYuOTU1MDU4Nyw3OS4yNjg1MjgyIEM0NC43OTgxOTY5LDc5LjI3MDcwOTkgMzQuOTQxMzQ0Myw2OS40MTcxNzk3IDM0LjkzOTE2MTgsNTcuMjYwMDUyIEMzNC45MzY5OCw0NS4xMDI5MjQ0IDQ0Ljc5MDI5NDgsMzUuMjQ1ODU2MiA1Ni45NDcxNTY2LDM1LjI0MzY3MzYgQzY5LjEwNDAxODUsMzUuMjQxNDkxNiA3OC45NjA4NzEzLDQ1LjA5NTAyMTcgNzguOTYzMDU0LDU3LjI1MjE0OTMgQzc4Ljk2NDEwMTcsNjMuMDkwMjA4IDc2LjY0NTk5NzYsNjguNjg5NTcxNCA3Mi41MTg2OTc5LDcyLjgxODQ0MzMgQzY4LjM5MTM5ODIsNzYuOTQ3MzE1MyA2Mi43OTI5ODk4LDc5LjI2NzQ4IDU2Ljk1NTA1ODcsNzkuMjY4NTI4MiBNNzUuOTIwNjU1OCwyMTguMTI3MzkyIEwzNy45NDk5NSwyMTguMTI3MzkyIEwzNy45NDk5NSw5NS45NjY1MjA3IEw3NS45MjA2NTU4LDk1Ljk2NjUyMDcgTDc1LjkyMDY1NTgsMjE4LjEyNzM5MiBaIE0yMzcuMDMzNDAzLDAuMDE4MjU3NzA5MSBMMTguODg5NTI0OSwwLjAxODI1NzcwOTEgQzguNTc5NTk0NjksLTAuMDk4MDkyMzk3MSAwLjEyNDgyNzAzOCw4LjE2MDU2MjMxIC0wLjAwMSwxOC40NzA2MDY2IEwtMC4wMDEsMjM3LjUyNDA5MSBDMC4xMjA1MTkwNTIsMjQ3LjgzOTEwMyA4LjU3NDYwNjMxLDI1Ni4xMDU5MzQgMTguODg5NTI0OSwyNTUuOTk3NyBMMjM3LjAzMzQwMywyNTUuOTk3NyBDMjQ3LjM2ODcyOCwyNTYuMTI1ODE4IDI1NS44NTU5MjIsMjQ3Ljg1OTQ2NCAyNTUuOTk5LDIzNy41MjQwOTEgTDI1NS45OTksMTguNDU0ODAxNiBDMjU1Ljg1MTYyNCw4LjEyNDM4OTc5IDI0Ny4zNjM3NDIsLTAuMTMzNzkyODY4IDIzNy4wMzM0MDMsMC4wMDA3OTA4MDcwNTUiIGZpbGw9IiMwQTY2QzIiPjwvcGF0aD4KICAgIDwvZz48L3N2Zz4=" alt="" width="28" height="28">
           <span class="contact-text">
             <span class="contact-label">LinkedIn<span class="sr-only"> (opens in a new tab)</span></span>
             <span class="contact-value">aditya-kumar-sinqh</span>
           </span>
         </a>
-        <a class="contact-link" href="Aditya_Kumar_SINGH_CV.pdf" download="Aditya_Kumar_Singh_CV.pdf">
+        <a class="contact-link" href="Aditya_Kumar_SINGH_CV.pdf" download="Aditya_Kumar_Singh_CV.pdf" data-goatcounter-click="cv-contact">
           <img loading="lazy" decoding="async" class="contact-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIj48cGF0aCBmaWxsPSIjOTA5MDkwIiBkPSJtMjQuMSAyLjA3Mmw1LjU2NCA1Ljh2MjIuMDU2SDguODc5VjMwaDIwLjg1NlY3Ljk0NXoiLz48cGF0aCBmaWxsPSIjZjRmNGY0IiBkPSJNMjQuMDMxIDJIOC44MDh2MjcuOTI4aDIwLjg1NlY3Ljg3M3oiLz48cGF0aCBmaWxsPSIjN2E3YjdjIiBkPSJNOC42NTUgMy41aC02LjM5djYuODI3aDIwLjFWMy41eiIvPjxwYXRoIGZpbGw9IiNkZDIwMjUiIGQ9Ik0yMi40NzIgMTAuMjExSDIuMzk1VjMuMzc5aDIwLjA3N3oiLz48cGF0aCBmaWxsPSIjNDY0NjQ4IiBkPSJNOS4wNTIgNC41MzRINy43NDV2NC44aDEuMDI4VjcuNzE1TDkgNy43MjhhMiAyIDAgMCAwIC42NDctLjExN2ExLjQgMS40IDAgMCAwIC40OTMtLjI5MWExLjIgMS4yIDAgMCAwIC4zMzUtLjQ1NGEyLjEgMi4xIDAgMCAwIC4xMDUtLjkwOGEyLjIgMi4yIDAgMCAwLS4xMTQtLjY0NGExLjE3IDEuMTcgMCAwIDAtLjY4Ny0uNjVhMiAyIDAgMCAwLS40MDktLjEwNGEyIDIgMCAwIDAtLjMxOS0uMDI2bS0uMTg5IDIuMjk0aC0uMDg5di0xLjQ4aC4xOTNhLjU3LjU3IDAgMCAxIC40NTkuMTgxYS45Mi45MiAwIDAgMSAuMTgzLjU1OGMwIC4yNDYgMCAuNDY5LS4yMjIuNjI2YS45NC45NCAwIDAgMS0uNTI0LjExNG0zLjY3MS0yLjMwNmMtLjExMSAwLS4yMTkuMDA4LS4yOTUuMDExTDEyIDQuNTM4aC0uNzh2NC44aC45MThhMi43IDIuNyAwIDAgMCAxLjAyOC0uMTc1YTEuNyAxLjcgMCAwIDAgLjY4LS40OTFhMS45IDEuOSAwIDAgMCAuMzczLS43NDlhMy43IDMuNyAwIDAgMCAuMTE0LS45NDlhNC40IDQuNCAwIDAgMC0uMDg3LTEuMTI3YTEuOCAxLjggMCAwIDAtLjQtLjczM2ExLjYgMS42IDAgMCAwLS41MzUtLjRhMi40IDIuNCAwIDAgMC0uNTQ5LS4xNzhhMS4zIDEuMyAwIDAgMC0uMjI4LS4wMTdtLS4xODIgMy45MzdoLS4xVjUuMzkyaC4wMTNhMS4wNiAxLjA2IDAgMCAxIC42LjEwN2ExLjIgMS4yIDAgMCAxIC4zMjQuNGExLjMgMS4zIDAgMCAxIC4xNDIuNTI2Yy4wMDkuMjIgMCAuNCAwIC41NDlhMyAzIDAgMCAxLS4wMzMuNTEzYTEuOCAxLjggMCAwIDEtLjE2OS41YTEuMSAxLjEgMCAwIDEtLjM2My4zNmEuNjcuNjcgMCAwIDEtLjQxNi4xMDZtNS4wOC0zLjkxNUgxNXY0LjhoMS4wMjhWNy40MzRoMS4zdi0uODkyaC0xLjNWNS40M2gxLjR2LS44OTIiLz48cGF0aCBmaWxsPSIjZGQyMDI1IiBkPSJNMjEuNzgxIDIwLjI1NXMzLjE4OC0uNTc4IDMuMTg4LjUxMXMtMS45NzUuNjQ2LTMuMTg4LS41MTFtLTIuMzU3LjA4M2E3LjUgNy41IDAgMCAwLTEuNDczLjQ4OWwuNC0uOWMuNC0uOS44MTUtMi4xMjcuODE1LTIuMTI3YTE0IDE0IDAgMCAwIDEuNjU4IDIuMjUyYTEzIDEzIDAgMCAwLTEuNC4yODhabS0xLjI2Mi02LjVjMC0uOTQ5LjMwNy0xLjIwOC41NDYtMS4yMDhzLjUwOC4xMTUuNTE3LjkzOWExMC44IDEwLjggMCAwIDEtLjUxNyAyLjQzNGE0LjQgNC40IDAgMCAxLS41NDctMi4xNjJabS00LjY0OSAxMC41MTZjLS45NzgtLjU4NSAyLjA1MS0yLjM4NiAyLjYtMi40NDRjLS4wMDMuMDAxLTEuNTc2IDMuMDU2LTIuNiAyLjQ0NE0yNS45IDIwLjg5NWMtLjAxLS4xLS4xLTEuMjA3LTIuMDctMS4xNmExNCAxNCAwIDAgMC0yLjQ1My4xNzNhMTIuNSAxMi41IDAgMCAxLTIuMDEyLTIuNjU1YTExLjggMTEuOCAwIDAgMCAuNjIzLTMuMWMtLjAyOS0xLjItLjMxNi0xLjg4OC0xLjIzNi0xLjg3OHMtMS4wNTQuODE1LS45MzMgMi4wMTNhOS4zIDkuMyAwIDAgMCAuNjY1IDIuMzM4cy0uNDI1IDEuMzIzLS45ODcgMi42MzlzLS45NDYgMi4wMDYtLjk0NiAyLjAwNmE5LjYgOS42IDAgMCAwLTIuNzI1IDEuNGMtLjgyNC43NjctMS4xNTkgMS4zNTYtLjcyNSAxLjk0NWMuMzc0LjUwOCAxLjY4My42MjMgMi44NTMtLjkxYTIzIDIzIDAgMCAwIDEuNy0yLjQ5MnMxLjc4NC0uNDg5IDIuMzM5LS42MjNzMS4yMjYtLjI0IDEuMjI2LS4yNHMxLjYyOSAxLjYzOSAzLjIgMS41ODFzMS40OTUtLjkzOSAxLjQ4NS0xLjAzNSIvPjxwYXRoIGZpbGw9IiM5MDkwOTAiIGQ9Ik0yMy45NTQgMi4wNzdWNy45NWg1LjYzM3oiLz48cGF0aCBmaWxsPSIjZjRmNGY0IiBkPSJNMjQuMDMxIDJ2NS44NzNoNS42MzN6Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTguOTc1IDQuNDU3SDcuNjY4djQuOEg4LjdWNy42MzlsLjIyOC4wMTNhMiAyIDAgMCAwIC42NDctLjExN2ExLjQgMS40IDAgMCAwIC40OTMtLjI5MWExLjIgMS4yIDAgMCAwIC4zMzItLjQ1NGEyLjEgMi4xIDAgMCAwIC4xMDUtLjkwOGEyLjIgMi4yIDAgMCAwLS4xMTQtLjY0NGExLjE3IDEuMTcgMCAwIDAtLjY4Ny0uNjVhMiAyIDAgMCAwLS40MTEtLjEwNWEyIDIgMCAwIDAtLjMxOS0uMDI2bS0uMTg5IDIuMjk0aC0uMDg5di0xLjQ4aC4xOTRhLjU3LjU3IDAgMCAxIC40NTkuMTgxYS45Mi45MiAwIDAgMSAuMTgzLjU1OGMwIC4yNDYgMCAuNDY5LS4yMjIuNjI2YS45NC45NCAwIDAgMS0uNTI0LjExNG0zLjY3LTIuMzA2Yy0uMTExIDAtLjIxOS4wMDgtLjI5NS4wMTFsLS4yMzUuMDA2aC0uNzh2NC44aC45MThhMi43IDIuNyAwIDAgMCAxLjAyOC0uMTc1YTEuNyAxLjcgMCAwIDAgLjY4LS40OTFhMS45IDEuOSAwIDAgMCAuMzczLS43NDlhMy43IDMuNyAwIDAgMCAuMTE0LS45NDlhNC40IDQuNCAwIDAgMC0uMDg3LTEuMTI3YTEuOCAxLjggMCAwIDAtLjQtLjczM2ExLjYgMS42IDAgMCAwLS41MzUtLjRhMi40IDIuNCAwIDAgMC0uNTQ5LS4xNzhhMS4zIDEuMyAwIDAgMC0uMjI4LS4wMTdtLS4xODIgMy45MzdoLS4xVjUuMzE1aC4wMTNhMS4wNiAxLjA2IDAgMCAxIC42LjEwN2ExLjIgMS4yIDAgMCAxIC4zMjQuNGExLjMgMS4zIDAgMCAxIC4xNDIuNTI2Yy4wMDkuMjIgMCAuNCAwIC41NDlhMyAzIDAgMCAxLS4wMzMuNTEzYTEuOCAxLjggMCAwIDEtLjE2OS41YTEuMSAxLjEgMCAwIDEtLjM2My4zNmEuNjcuNjcgMCAwIDEtLjQxNi4xMDZtNS4wNzctMy45MTVoLTIuNDN2NC44aDEuMDI4VjcuMzU3aDEuM3YtLjg5MmgtMS4zVjUuMzUzaDEuNHYtLjg5MiIvPjwvc3ZnPg==" alt="" width="28" height="28">
           <span class="contact-text">
             <span class="contact-label">CV</span>
@@ -2633,6 +2677,41 @@ html:not([data-motion="off"]) .hero .ly-float { animation-delay: 450ms; }
     </div>
   </div>
 </footer>
+
+<dialog class="cf" id="contactDialog" aria-labelledby="cfTitle">
+  <div class="cf__inner">
+    <button class="cf__close" type="button" data-contact-close aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3 3 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <div class="cf__view" data-view="form">
+      <div class="cf__head">
+        <h2 id="cfTitle">Get in touch</h2>
+        <p>Tell me a little about the role or project. I reply within two working days.</p>
+      </div>
+      <form class="cf__form" novalidate>
+        <input type="hidden" name="access_key" value="f4f00ca9-8008-4b65-b245-47109c4e0786">
+        <input type="checkbox" name="botcheck" class="cf__hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="cf__row">
+          <div class="cf__field"><label for="cfName">Your name</label><input id="cfName" name="name" type="text" autocomplete="name" required maxlength="120"></div>
+          <div class="cf__field"><label for="cfEmail">Your email</label><input id="cfEmail" name="email" type="email" autocomplete="email" required maxlength="200"></div>
+        </div>
+        <div class="cf__field"><label for="cfCompany">Company <span class="cf__opt">(optional)</span></label><input id="cfCompany" name="company" type="text" autocomplete="organization" maxlength="160"></div>
+        <div class="cf__field"><label for="cfMessage">Message</label><textarea id="cfMessage" name="message" required maxlength="5000" placeholder="What are you working on, and how can I help?"></textarea></div>
+        <p class="cf__msg cf__msg--error" data-msg="invalid" role="alert" hidden>Please fill in your name, a valid email and a message.</p>
+        <p class="cf__msg cf__msg--error" data-msg="failed" role="alert" hidden>Something went wrong and the message was not sent. Please email me instead.</p>
+        <div class="cf__foot">
+          <button class="btn btn--primary" type="submit" data-label-sending="Sending…">Send message</button>
+          <span class="cf__alt">or email <a href="mailto:aditya.k.singh1229@gmail.com">aditya.k.singh1229@gmail.com</a></span>
+        </div>
+      </form>
+    </div>
+    <div class="cf__view cf__done" data-view="done" hidden>
+      <h2>Thanks, your message is on its way.</h2>
+      <p>I will get back to you at the email you gave, usually within two working days.</p>
+      <button class="btn btn--secondary" type="button" data-contact-close>Close</button>
+    </div>
+  </div>
+</dialog>
 
 <script type="module">
 /*
@@ -3492,6 +3571,61 @@ else init();
     window.addEventListener('resize', function () { go(cur, true); });
     if (reduceMotion) pauseBtn.hidden = true;
     mark(); hold(); setAuto(!reduceMotion);
+  })();
+
+  /* ---------- Contact popup ----------
+     "Get in touch" opens a modal form that posts to Web3Forms (which emails it on). Without JS, or without
+     <dialog>, the link still scrolls to the contact section. Opens and sends are counted in GoatCounter. */
+  (function () {
+    var dlg = document.getElementById('contactDialog');
+    if (!dlg || typeof dlg.showModal !== 'function') return;
+    var form = dlg.querySelector('form');
+    var submit = form.querySelector('[type="submit"]');
+    var sendLabel = submit.textContent;
+    var views = { form: dlg.querySelector('[data-view="form"]'), done: dlg.querySelector('[data-view="done"]') };
+    var msgs = { invalid: dlg.querySelector('[data-msg="invalid"]'), failed: dlg.querySelector('[data-msg="failed"]') };
+    var opener = null;
+    function track(name) { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: name, event: true }); } catch (e) {} }
+    function show(v) { views.form.hidden = v !== 'form'; views.done.hidden = v !== 'done'; }
+    function say(m) { msgs.invalid.hidden = m !== 'invalid'; msgs.failed.hidden = m !== 'failed'; }
+    function open(e) {
+      e.preventDefault(); e.stopPropagation();
+      opener = e.currentTarget;
+      if (!views.done.hidden) { form.reset(); show('form'); }
+      say(null);
+      root.classList.add('cf-lock');
+      dlg.showModal();
+      track('contact-open');
+    }
+    document.querySelectorAll('[data-contact-open]').forEach(function (a) { a.addEventListener('click', open); });
+    dlg.querySelectorAll('[data-contact-close]').forEach(function (b) { b.addEventListener('click', function () { dlg.close(); }); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });   // a click on the backdrop
+    dlg.addEventListener('close', function () { root.classList.remove('cf-lock'); if (opener) opener.focus(); });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        say('invalid');
+        var bad = form.querySelector(':invalid'); if (bad) bad.focus();
+        return;
+      }
+      if (form.botcheck.checked) return;
+      say(null);
+      submit.disabled = true; submit.textContent = submit.getAttribute('data-label-sending');
+      var data = {
+        access_key: form.access_key.value,
+        subject: 'Portfolio contact from ' + form.name.value.trim(),
+        from_name: 'adityasinqh.github.io',
+        name: form.name.value.trim(), email: form.email.value.trim(),
+        company: form.company.value.trim() || '-', message: form.message.value.trim(),
+        page: location.href
+      };
+      fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) })
+        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || !j.success) throw new Error(j.message || r.status); }); })
+        .then(function () { show('done'); track('contact-sent'); var c = views.done.querySelector('button'); if (c) c.focus(); })
+        .catch(function () { say('failed'); track('contact-failed'); })
+        .then(function () { submit.disabled = false; submit.textContent = sendLabel; });
+    });
   })();
 
   document.getElementById('year').textContent = new Date().getFullYear();
